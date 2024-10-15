@@ -1,0 +1,1 @@
+// Folder that consists of all the API calls without hooks(useMutation and useQuery). only axios calls with validation

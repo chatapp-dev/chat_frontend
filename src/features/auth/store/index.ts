@@ -1,0 +1,1 @@
+// Contains store definition(zustand) for auth feature
