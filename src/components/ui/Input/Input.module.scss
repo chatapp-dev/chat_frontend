@@ -1,0 +1,19 @@
+@use '@/styles/variables.scss' as *;
+
+.input {
+	padding: 0.4375rem 1rem;
+	font-family: $font-nunito-sans;
+	font-size: $text-sm;
+
+	border: 1px solid #cccccc;
+	border-radius: 5px;
+	line-height: 1.5rem;
+
+	&::placeholder {
+		color: $gray-5;
+	}
+
+	&:focus-visible {
+		outline: none;
+	}
+}

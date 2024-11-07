@@ -1,0 +1,29 @@
+$minWidth: 320;
+$maxWidth: 1440;
+$maxWidthContainer: 1200;
+$containerPadding: 20;
+$containerWidth: calc($maxWidthContainer + $containerPadding * 2);
+$rem-base: 16;
+
+$font-nunito-sans: 'Nunito Sans', sans-serif;
+
+$text-xs: 0.75rem;
+$text-sm: 0.875rem;
+$text-base: 1rem;
+$text-lg: 1.125rem;
+$text-xl: 1.25rem;
+$text-2xl: 1.5rem;
+$text-3xl: 1.875rem;
+$text-4xl: 2.25rem;
+
+$screen-xs: 30rem;
+$screen-sm: 36rem;
+$screen-md: 48rem;
+$screen-lg: 64rem;
+$screen-xl: 75rem;
+
+$gray-5: #e0e0e0; // rgb(224, 224, 224)
+$gray-4: #bdbdbd; // rgb(189, 189, 189)
+$gray-3: #828282; // rgb(130, 130, 130)
+
+$black: #000000;

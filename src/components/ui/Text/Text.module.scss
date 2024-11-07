@@ -1,0 +1,44 @@
+@use '@/styles/variables.scss' as *;
+
+.xs {
+	font-size: $text-xs;
+	line-height: 1rem;
+}
+
+.sm {
+	font-size: $text-sm;
+	line-height: 1.1875rem;
+}
+
+.base {
+	font-size: $text-base;
+	line-height: 1.375rem;
+}
+.lg {
+	font-size: $text-lg;
+	line-height: 1.5625rem;
+}
+
+.gray5 {
+	color: $gray-5;
+}
+
+.gray4 {
+	color: $gray-4;
+}
+
+.gray3 {
+	color: $gray-3;
+}
+
+.black {
+	color: $black;
+}
+
+$weights: 400, 600, 700;
+
+@each $weight in $weights {
+	.weight-#{$weight} {
+		font-weight: $weight;
+	}
+}

@@ -1,0 +1,31 @@
+@use '@/styles/mixins.scss' as *;
+
+.wrapper {
+	display: flex;
+	height: max-content;
+	min-height: 100vh;
+}
+
+.image {
+	flex: 1;
+	position: relative;
+	img {
+		object-fit: cover;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	@include screen-lg-max {
+		display: none;
+	}
+}
+
+.content {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

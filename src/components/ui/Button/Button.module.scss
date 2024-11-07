@@ -1,0 +1,33 @@
+@use '@/styles/variables.scss' as *;
+
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 700;
+}
+
+.primary {
+	color: $black;
+	padding: 0.8125rem 0.625rem 0.75rem 0.625rem;
+	border-radius: 6px;
+	background: #cccccc;
+	border: none;
+}
+.light {
+	color: $gray-3;
+	border: 1px solid $gray-4;
+	border-radius: 5px;
+	padding: 0.7813rem 0.625rem;
+	background-color: transparent;
+}
+
+.sm {
+	font-size: $text-sm;
+	line-height: 1.1875rem;
+}
+
+.base {
+	font-size: $text-base;
+	line-height: 1.375rem;
+}

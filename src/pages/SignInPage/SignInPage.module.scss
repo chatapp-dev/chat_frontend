@@ -1,0 +1,83 @@
+@use '@/styles/variables.scss' as *;
+@use '@/styles/mixins.scss' as *;
+
+.container {
+	@include adaptive-value('padding', 16, 8);
+	@include adaptive-value('gap', 32, 8);
+	max-width: 41rem;
+
+	display: flex;
+	flex-direction: column;
+
+	h1 {
+		margin-bottom: 0.25rem;
+	}
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	align-items: center;
+}
+
+.fields {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	width: 100%;
+}
+
+.field {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	> label {
+		margin-bottom: 0.25rem;
+	}
+	> a {
+		align-self: flex-end;
+		margin-top: 1rem;
+		color: #cccccc;
+		font-size: $text-sm;
+		font-weight: 600;
+		line-height: 1.1875rem;
+		text-decoration: none;
+		transition: all 0.3s ease-in-out;
+
+		&:hover {
+			color: $gray-3;
+			text-decoration: underline;
+		}
+	}
+}
+
+.submitBtn {
+	max-width: 26rem;
+	width: 100%;
+}
+
+.or {
+	align-self: center;
+	color: #cccccc;
+}
+
+.alternativeAuth {
+	@include adaptive-value('gap', 2rem, 1rem);
+	display: flex;
+	button {
+		width: 100%;
+		gap: 0.8125rem;
+	}
+}
+
+.signUp {
+	gap: 0.625rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	a span {
+		color: #cccccc;
+	}
+}

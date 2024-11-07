@@ -1,0 +1,10 @@
+@use './variables.scss';
+@use './fonts.scss';
+@use './reset.scss';
+@use './mixins.scss';
+
+html,
+body,
+#root {
+	height: 100%;
+}

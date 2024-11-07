@@ -1,0 +1,9 @@
+@use '@/styles/variables.scss' as *;
+
+.label {
+	color: $gray-3;
+	font-family: Nunito Sans;
+	font-size: $text-sm;
+	font-weight: 600;
+	line-height: 1.1875rem;
+}
