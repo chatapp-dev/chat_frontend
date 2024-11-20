@@ -1,9 +1,4 @@
-export type Icons =
-	| 'eye-closed'
-	| 'eye-open'
-	| 'tick'
-	| 'google-logo'
-	| 'apple-logo'
+export type Icons = 'eye-off' | 'eye' | 'error' | 'arrow-top-right'
 
 export type IconProps = {
 	name: Icons

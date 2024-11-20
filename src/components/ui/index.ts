@@ -1,6 +1,2 @@
 export * from './Button'
-export * from './Heading'
 export * from './Input'
-export * from './Label'
-export * from './PasswordInput'
-export * from './Text'

@@ -6,7 +6,7 @@ import { createBrowserRouter } from 'react-router-dom'
 export const router = createBrowserRouter([
 	{
 		path: Routes.ROOT,
-		element: <>Hello world</>,
+		element: <></>,
 		index: true,
 	},
 	{

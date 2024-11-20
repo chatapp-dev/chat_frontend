@@ -1,26 +1,34 @@
 @font-face {
-	font-family: 'Nunito Sans';
-	src: url('../assets/fonts/NunitoSans-Bold.woff2');
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
-	font-variation-settings: 'wdth' 100, 'YTLC' 500;
-}
-
-@font-face {
-	font-family: 'Nunito Sans';
-	src: url('../assets/fonts/NunitoSans-Regular.woff2');
+	font-family: 'Palanquin';
+	src: url('../assets/fonts/Palanquin-Regular.woff2');
 	font-weight: 400;
-	font-style: normal;
 	font-display: swap;
-	font-variation-settings: 'wdth' 100, 'YTLC' 500;
 }
 
 @font-face {
-	font-family: 'Nunito Sans';
-	src: url('../assets/fonts/NunitoSans-SemiBold.woff2');
-	font-weight: 600;
-	font-style: normal;
+	font-family: 'Palanquin';
+	src: url('../assets/fonts/Palanquin-Medium.woff2');
+	font-weight: 500;
 	font-display: swap;
-	font-variation-settings: 'wdth' 100, 'YTLC' 500;
+}
+
+@font-face {
+	font-family: 'Palanquin';
+	src: url('../assets/fonts/Palanquin-SemiBold.woff2');
+	font-weight: 600;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Palanquin';
+	src: url('../assets/fonts/Palanquin-Bold.woff2');
+	font-weight: 700;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('../assets/fonts/Roboto-Regular.woff2');
+	font-weight: 400;
+	font-display: swap;
 }

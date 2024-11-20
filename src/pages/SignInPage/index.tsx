@@ -1,98 +1,81 @@
-import {
-	Button,
-	Heading,
-	Input,
-	Label,
-	PasswordInput,
-	Text,
-} from '@/components/ui'
-
+import appleLogo from '@/assets/images/apple-logo.png'
+import googleLogo from '@/assets/images/google-logo.png'
+import logo from '@/assets/images/logo.png'
 import { Icon } from '@/components/common'
+import { Button, Input } from '@/components/ui'
 import { Routes } from '@/constants'
 import { useForm } from '@/hooks'
 import { Link } from 'react-router-dom'
 import styles from './SignInPage.module.scss'
 
-// TODO: прибрати цей тип потім, коли вже реалізуємо api для auth, де вже буде тип SignInInput, який й використати тут
-type TypeFormValues = {
+type FormValues = {
 	email: string
 	password: string
 }
 
 export const SignInPage = () => {
-	const { register, handleSubmit } = useForm<TypeFormValues>({
-		defaultValues: {
-			email: '',
-			password: '',
-		},
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+	} = useForm<FormValues>({
 		mode: 'onBlur',
 	})
 
-	const onSubmit = async (data: TypeFormValues) => {
-		console.log(data)
-	}
-
+	const onSubmit = () => {}
 	return (
-		<div className={styles.container}>
-			<div>
-				<Heading size={'4xl'} as='h1'>
-					Welcome Back to Your
-					<br />
-					Motivational Space
-				</Heading>
-				<Text size='base'>
-					Reconnect with a community that inspires. Share your goals,
-					achievements, and keep the momentum going. Let's get back to making
-					progress together
-				</Text>
+		<div className={styles.wrapper}>
+			<div className={styles.logo}>
+				<img src={logo} />
 			</div>
-			<form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-				<div className={styles.fields}>
-					<div className={styles.field}>
-						<Label htmlFor='email'>Email</Label>
-						<Input
-							type='email'
-							id='email'
-							placeholder='mail@abc.com'
-							{...register('email')}
-						/>
+			<div className={styles.container}>
+				<form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+					<div className={styles.header}>
+						<h1>Welcome Back to Your Motivational Space</h1>
+						<p>
+							Reconnect with a community that inspires. Share your goals,
+							achievements, and keep the momentum going. Let's get back to
+							making progress together
+						</p>
 					</div>
-					<div className={styles.field}>
-						<Label htmlFor='password'>Password</Label>
-						<PasswordInput
-							id='password'
-							placeholder='*****************'
-							{...register('password')}
-						/>
-						<Link to={Routes.FORGOT_PASSWORD}>Forgot your password?</Link>
-					</div>
+					<Input
+						placeholder='tom_hiddleston@gmail.com'
+						type='email'
+						label='Email'
+						isValid={!errors.email}
+						{...register('email')}
+					/>
+					<Input
+						placeholder='**********'
+						type='password'
+						label='Password'
+						isValid={!errors.password}
+						{...register('password')}
+					/>
+
+					<Link className={styles.forgotPassword} to={Routes.FORGOT_PASSWORD}>
+						Forgot your password?
+					</Link>
+					<Button className={styles.submitButton}>
+						Log In and Stay Motivated
+						<Icon name='arrow-top-right' width={24} height={24} />
+					</Button>
+				</form>
+				<span className={styles.or}>or</span>
+				<div className={styles.socialAuth}>
+					<Button>
+						<img src={googleLogo} alt='google logo' />
+						Sign in with Google
+					</Button>
+					<Button>
+						<img src={appleLogo} alt='apple logo' />
+						Sign in with Apple
+					</Button>
 				</div>
-				<Button className={styles.submitBtn} type='submit'>
-					Log In and Stay Motivated
-				</Button>
-			</form>
-			<Text size='xs' weight={600} as='span' className={styles.or}>
-				-------------or-------------
-			</Text>
-			<div className={styles.alternativeAuth}>
-				<Button size={'sm'} variant={'light'}>
-					<Icon name='google-logo' width={24} height={24} />
-					Sign in with Google
-				</Button>
-				<Button size='sm' variant={'light'}>
-					<Icon name='apple-logo' width={24} height={24} />
-					Sign in with Apple
-				</Button>
-			</div>
-			<div className={styles.signUp}>
-				<Text color='gray-3' size='lg'>
-					Not Member of Our Motivation Realm?
-				</Text>
-				<Link to={Routes.SIGN_UP}>
-					<Text size='lg' weight={600} as={'span'}>
-						Become a member
-					</Text>
-				</Link>
+				<div className={styles.noAccount}>
+					<p>Not Member of Our Motivation Realm?</p>
+					<Link to={Routes.SIGN_UP}>Become a member</Link>
+				</div>
 			</div>
 		</div>
 	)

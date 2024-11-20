@@ -1,83 +1,169 @@
 @use '@/styles/variables.scss' as *;
 @use '@/styles/mixins.scss' as *;
 
-.container {
-	@include adaptive-value('padding', 16, 8);
-	@include adaptive-value('gap', 32, 8);
-	max-width: 41rem;
-
+.wrapper {
+	max-width: 37.625rem;
+	padding: 3rem 0.625rem;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
+	gap: 34px;
+	align-items: center;
+	@include screen-xs-max {
+		padding: 1.125rem 0;
+		gap: 1.125rem;
+	}
+}
 
-	h1 {
-		margin-bottom: 0.25rem;
+.container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 29px;
+	@include screen-xs-min {
+		padding: 0 5px;
+	}
+	@include screen-xs-max {
+		background-color: rgba($primary-90, 0.85);
 	}
 }
 
 .form {
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
-	align-items: center;
-}
-
-.fields {
+	padding: 2rem;
 	display: flex;
 	flex-direction: column;
 	gap: 1.5rem;
-	width: 100%;
+	@include screen-xs-min {
+		border-radius: 1.5rem;
+		background-color: rgba($primary-90, 0.85);
+	}
+	@include screen-xs-max {
+		padding: 2rem 1.625rem;
+	}
 }
 
-.field {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	> label {
+.header {
+	margin-bottom: 8px;
+	h1 {
+		color: $text;
+		font-family: $font-roboto;
+		font-size: 2.8125rem;
+		line-height: 115.555556%; /* 52/45 */
 		margin-bottom: 0.25rem;
+		@include screen-md-max {
+			font-size: 2.25rem;
+			line-height: 122.222222%; /* 44/36 */
+		}
 	}
-	> a {
-		align-self: flex-end;
-		margin-top: 1rem;
-		color: #cccccc;
-		font-size: $text-sm;
-		font-weight: 600;
-		line-height: 1.1875rem;
-		text-decoration: none;
-		transition: all 0.3s ease-in-out;
-
-		&:hover {
-			color: $gray-3;
-			text-decoration: underline;
+	p {
+		color: $text;
+		font-family: $font-roboto;
+		font-size: 1rem;
+		line-height: 150%; /* 24/16 */
+		letter-spacing: 0.4px;
+		@include screen-md-max {
+			font-size: $text-xs;
+			line-height: 133.333333%; /* 16/12 */
 		}
 	}
 }
-
-.submitBtn {
-	max-width: 26rem;
-	width: 100%;
-}
-
-.or {
-	align-self: center;
-	color: #cccccc;
-}
-
-.alternativeAuth {
-	@include adaptive-value('gap', 2rem, 1rem);
-	display: flex;
-	button {
-		width: 100%;
-		gap: 0.8125rem;
+.submitButton {
+	@include screen-xs-max {
+		font-size: $text-lg;
+		padding: 0.75rem 0.75rem;
+		line-height: 133.333333%; /* 24/18 */
 	}
 }
 
-.signUp {
-	gap: 0.625rem;
+.forgotPassword {
+	color: $on-surface;
+	font-family: $font-roboto;
+	font-size: 0.875rem;
+	line-height: 142.857143%; /* 20/14 */
+	letter-spacing: 0.25px;
+	transition: all 0.3s ease-in-out;
+	align-self: flex-start;
+	&:hover {
+		color: rgba($on-surface, 0.85);
+	}
+}
+
+.or {
+	position: relative;
+	font-family: $font-palanquin;
+	font-size: 0.75rem;
+	font-weight: 600;
+	line-height: 133.333333%; /* 16/12 */
+
+	&::after,
+	&::before {
+		content: '-------------';
+		position: absolute;
+		top: 50%;
+		color: $outline-variant;
+	}
+
+	&::before {
+		transform: translateY(-50%) translateX(-100%);
+		left: -4px;
+	}
+	&::after {
+		transform: translateY(-50%) translateX(4px);
+		left: 100%;
+	}
+}
+
+.socialAuth {
+	display: flex;
+	width: 100%;
+	gap: 1rem;
+
+	@include screen-xs-max {
+		flex-direction: column;
+		max-width: 256px;
+	}
+
+	> button {
+		width: 100%;
+		background: rgb(140, 201, 255), rgb(207, 255, 167);
+		border: 1px solid rgb(111, 121, 120);
+		color: $on-surface-variant;
+		display: flex;
+		gap: 0.75rem;
+		font-size: $text-sm;
+		line-height: 135.714286%; /* 19/14 */
+		padding: 10px;
+		font-weight: 700;
+	}
+}
+
+.noAccount {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	gap: 0.625rem;
+	padding: 1.5rem;
 
-	a span {
-		color: #cccccc;
+	@include screen-xs-min {
+		border-radius: 1.5rem;
+		background-color: rgba($primary-90, 0.85);
+	}
+
+	> p,
+	a {
+		font-size: 1rem;
+		line-height: 150%; /* 24/16 */
+	}
+	> p {
+		color: $on-surface;
+	}
+	> a {
+		color: $primary;
+		transition: all 0.3s ease-in-out;
+		&:hover {
+			color: rgba($primary, 0.85);
+		}
 	}
 }
