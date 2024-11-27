@@ -1,6 +1,6 @@
 import { Routes } from "@/constants";
 import { AuthLayout } from "@/layouts";
-import { SignInPage, SignUpPage } from "@/pages";
+import { SignInPage, SignUpPage, ForgotPassword } from "@/pages";
 import { createBrowserRouter } from "react-router-dom";
 
 export const router = createBrowserRouter([
@@ -19,6 +19,10 @@ export const router = createBrowserRouter([
       {
         element: <SignUpPage />,
         path: Routes.SIGN_UP,
+      },
+      {
+        element: <ForgotPassword />,
+        path: Routes.FORGOT_PASSWORD,
       },
     ],
   },
