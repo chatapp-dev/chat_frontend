@@ -1,12 +1,12 @@
 import appleLogo from "@/assets/images/apple-logo.png";
 import googleLogo from "@/assets/images/google-logo.png";
 import logo from "@/assets/images/logo.png";
-import { Icon, Secure, Test } from "@/components/common";
-// import { Test } from "@/components/common/Test/Test";
+import { Icon } from "@/components/common";
 import { Button, Input } from "@/components/ui";
 import { Routes } from "@/constants";
 import { useForm } from "@/hooks";
 import { Link } from "react-router-dom";
+import { SecurePage } from "../SecurePage";
 import styles from "./SignInPage.module.scss";
 
 type FormValues = {
@@ -15,7 +15,7 @@ type FormValues = {
 };
 //login
 export const SignInPage = () => {
-  const isLogin = false;
+  const isLogin = true;
 
   const {
     register,
@@ -28,7 +28,7 @@ export const SignInPage = () => {
   const onSubmit = () => {};
 
   return isLogin ? (
-    <Test />
+    <SecurePage />
   ) : (
     <div className={styles.wrapper}>
       <div className={styles.logo}>

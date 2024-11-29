@@ -1,0 +1,82 @@
+@use "@/styles/variables.scss" as *;
+
+.container {
+  padding: 0.25rem 0px 0.25rem 1rem;
+  position: relative;
+  border-radius: 0.25rem;
+  border: 1px solid $outline;
+  transition: all 0.3s ease-in-out;
+  &Invalid {
+    border-color: $error;
+    .label {
+      color: $error;
+      background-color: $surface;
+    }
+  }
+}
+
+.input {
+  padding: 0.25rem 0rem 0.25rem;
+  width: 100%;
+
+  color: rgb(28, 28, 20);
+  font-family: $font-roboto;
+  font-size: 1rem;
+  line-height: 150%; /* 24/16 */
+  letter-spacing: 0.5px;
+  background-color: transparent;
+
+  border: none;
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.label {
+  background: $primary-fixed;
+  padding: 0px 0.25rem;
+  border-radius: 4px;
+
+  position: absolute;
+  left: 0.75rem;
+  top: 0;
+  transform: translateY(-50%);
+  transition: all 0.3s ease-in-out;
+
+  color: $on-surface-variant;
+  font-family: $font-roboto;
+  font-size: 0.75rem;
+  line-height: 133.333333%; /* 16/12 */
+  letter-spacing: 0.025rem;
+}
+
+.error {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: red;
+  svg {
+    fill: $error;
+  }
+}
+
+.eye {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+
+  cursor: pointer;
+  background-color: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    fill: $primary-20;
+  }
+}
