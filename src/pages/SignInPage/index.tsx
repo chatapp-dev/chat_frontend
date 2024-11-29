@@ -1,7 +1,8 @@
 import appleLogo from "@/assets/images/apple-logo.png";
 import googleLogo from "@/assets/images/google-logo.png";
 import logo from "@/assets/images/logo.png";
-import { Icon, Secure } from "@/components/common";
+import { Icon, Secure, Test } from "@/components/common";
+// import { Test } from "@/components/common/Test/Test";
 import { Button, Input } from "@/components/ui";
 import { Routes } from "@/constants";
 import { useForm } from "@/hooks";
@@ -24,23 +25,10 @@ export const SignInPage = () => {
     mode: "onBlur",
   });
 
-  const onSubmit = () => {
-    const promise1 = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve("foo");
-      }, 300);
-    });
-
-    promise1.then((value) => {
-      console.log(value);
-      // Expected output: "foo"
-    });
-
-    console.log(promise1);
-  };
+  const onSubmit = () => {};
 
   return isLogin ? (
-    <Secure />
+    <Test />
   ) : (
     <div className={styles.wrapper}>
       <div className={styles.logo}>

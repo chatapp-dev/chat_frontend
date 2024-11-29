@@ -1,12 +1,12 @@
 import { Routes } from "@/constants";
 import { AuthLayout } from "@/layouts";
 import { SignInPage, SignUpPage, ForgotPassword } from "@/pages";
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Link } from "react-router-dom";
 
 export const router = createBrowserRouter([
   {
     path: Routes.ROOT,
-    element: <></>,
+    element: <Link to={Routes.SIGN_UP}>Welcome to Chat Mate</Link>,
     index: true,
   },
   {
