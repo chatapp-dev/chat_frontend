@@ -1,7 +1,7 @@
 import * as yup from "yup";
 
 export const registerSchema = yup.object().shape({
-  name: yup.string().required("Name is required"),
+  userName: yup.string().required("Username is required"),
 
   email: yup
     .string()
@@ -11,12 +11,14 @@ export const registerSchema = yup.object().shape({
     )
     .required("Email is required"),
 
-  phone: yup.string().matches(/^\+38\d{10}$/, "Enter a valid Phone"),
-
   password: yup
     .string()
-    .min(7, "Password must be at least 7 characters")
+    .min(7, "Password must be at least 10 characters")
     .required("Password is required"),
+  confirmpassword: yup
+    .string()
+    .oneOf([yup.ref("password"), undefined], "Passwords must match")
+    .required("Confirm password is required"),
 });
 
 export const loginSchema = yup.object().shape({
@@ -62,4 +64,8 @@ export const refrechSchema = yup.object().shape({
     .string()
     .min(10, "Password must be at least 10 characters")
     .required("Password is required"),
+  confirmpassword: yup
+    .string()
+    .oneOf([yup.ref("password"), undefined], "Passwords must match")
+    .required("Confirm password is required"),
 });

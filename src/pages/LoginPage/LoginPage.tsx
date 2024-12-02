@@ -1,7 +1,6 @@
 import appleLogo from "@/assets/images/apple-logo.png";
 import googleLogo from "@/assets/images/google-logo.png";
 import logo from "@/assets/images/logo.png";
-import { Icon } from "@/components/common";
 import { Button } from "@/components/ui";
 import { Routes } from "@/constants";
 import { Link } from "react-router-dom";

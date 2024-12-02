@@ -2,31 +2,39 @@ import { Button, InputFormik } from "@/components/ui";
 // import { useDispatch } from "react-redux";
 // import { loginThunk } from "../../redux/auth/operationsAuth";
 import { Formik, Form } from "formik";
-import { refrechSchema } from "../../../schemas/schemas";
-
+import { registerSchema } from "../../../schemas/schemas";
+import { Icon } from "../Icon";
 import styles from "../../../pages/SignInPage/SignInPage.module.scss";
 
 interface Values {
+  userName: string;
   email: string;
   password: string;
   confirmpassword: string;
 }
 
-export const RefreshForma = () => {
+export const RegisterForm = () => {
   return (
     <Formik
       initialValues={{
+        userName: "",
         email: "",
         password: "",
         confirmpassword: "",
       }}
-      validationSchema={refrechSchema}
+      validationSchema={registerSchema}
       onSubmit={(values: Values) => {
-        console.log("refrech", values);
+        console.log("register", values);
         // dispatch(loginThunk(values));
       }}
     >
       <Form className={styles.formik}>
+        <InputFormik
+          name="userName"
+          placeholder="Good Guy 1234"
+          type="name"
+          label="Username"
+        />
         <InputFormik
           name="email"
           placeholder="tom_hiddleston@gmail.com"
@@ -46,7 +54,10 @@ export const RefreshForma = () => {
           label="Repeat password"
         />
 
-        <Button className={styles.submitButton}>Save New Password</Button>
+        <Button className={styles.submitButton}>
+          Create My Account to Get Motivated
+          <Icon name="arrow-top-right" width={24} height={24} />
+        </Button>
       </Form>
     </Formik>
   );
