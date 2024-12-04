@@ -1,3 +1,2 @@
 // Global constants
-export  * from './routes'
-export * from './variables'
+export * from "./routes";
