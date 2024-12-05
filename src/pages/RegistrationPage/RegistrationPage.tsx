@@ -23,7 +23,7 @@ export const RegistrationPage = () => {
 
           <div className={styles.noAccount}>
             <p>Is Already a Member of Our Motivation Realm?</p>
-            <Link to={Routes.SIGN_IN}>Lod in</Link>
+            <Link to={Routes.SIGN_IN}>Log in</Link>
           </div>
         </div>
       </div>

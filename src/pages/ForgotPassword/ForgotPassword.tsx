@@ -3,9 +3,10 @@ import { ForgotPasswordForm } from "@/components/common/ForgotPasswordForm/Forgo
 
 import styles from "../SignInPage/SignInPage.module.scss";
 import { RefreshPage } from "../RefreshPage/RefreshPage";
+// import { SecurePage } from "../SecurePage";
 
 export const ForgotPassword = () => {
-  const isLogin = false;
+  const isLogin = true;
   return isLogin ? (
     <RefreshPage />
   ) : (
