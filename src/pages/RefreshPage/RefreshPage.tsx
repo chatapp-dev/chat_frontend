@@ -6,7 +6,7 @@ export const RefreshPage = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.logo}>
-        <img src={logo} />
+        <img src={logo} alt="Logo" />
       </div>
       <div className={styles.container}>
         <div className={styles.form}>

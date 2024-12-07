@@ -30,8 +30,9 @@ export const ForgotPasswordForm = () => {
           label="Email"
         />
 
-        <Button className={styles.submitButton}>
-          Send Reset Link
+        <Button type="submit" className={styles.submitButton}>
+          <span>Send Reset Link</span>
+
           <Icon name="forgot-password" width={24} height={24} />
         </Button>
       </Form>

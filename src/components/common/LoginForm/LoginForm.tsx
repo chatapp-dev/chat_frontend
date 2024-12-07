@@ -43,8 +43,9 @@ export const LoginForm = () => {
           Forgot your password?
         </Link>
 
-        <Button className={styles.submitButton}>
-          Log In and Stay Motivated
+        <Button type="submit" className={styles.submitButton}>
+          <span>Log In and Stay Motivated</span>
+
           <Icon name="arrow-top-right" width={24} height={24} />
         </Button>
       </Form>

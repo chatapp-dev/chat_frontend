@@ -8,9 +8,10 @@ export const RegistrationPage = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.logo}>
-        <img src={logo} />
+        <img src={logo} alt="Logo" />
       </div>
       <div className={styles.container}>
+        {/* <div className={styles.form}> */}
         <div className={styles.form}>
           <div className={styles.header}>
             <h1>Join the Motivation Movement</h1>
@@ -20,12 +21,13 @@ export const RegistrationPage = () => {
             </p>
           </div>
           <RegisterForm />
-
-          <div className={styles.noAccount}>
-            <p>Is Already a Member of Our Motivation Realm?</p>
-            <Link to={Routes.SIGN_IN}>Log in</Link>
-          </div>
         </div>
+
+        <div className={styles.noAccount}>
+          <p>Is Already a Member of Our Motivation Realm?</p>
+          <Link to={Routes.SIGN_IN}>Log in</Link>
+        </div>
+        {/* </div> */}
       </div>
     </div>
   );

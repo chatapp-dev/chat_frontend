@@ -6,13 +6,13 @@ import { RefreshPage } from "../RefreshPage/RefreshPage";
 // import { SecurePage } from "../SecurePage";
 
 export const ForgotPassword = () => {
-  const isLogin = true;
+  const isLogin = false;
   return isLogin ? (
     <RefreshPage />
   ) : (
     <div className={styles.wrapper}>
       <div className={styles.logo}>
-        <img src={logo} />
+        <img src={logo} alt="Logo" />
       </div>
       <div className={styles.container}>
         <div className={styles.form}>

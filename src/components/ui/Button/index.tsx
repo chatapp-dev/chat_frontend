@@ -31,7 +31,6 @@ export const Button = forwardRef<HTMLButtonElement, IButtonProps>(
   ({ variant, size, className, isIconOnly, ...props }, ref) => {
     return (
       <button
-        type="submit"
         ref={ref}
         className={buttonVariants({
           className: clsx(className, isIconOnly && styles.icon),

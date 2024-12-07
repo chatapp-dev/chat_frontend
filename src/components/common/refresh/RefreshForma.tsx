@@ -46,7 +46,9 @@ export const RefreshForma = () => {
           label="Repeat password"
         />
 
-        <Button className={styles.submitButton}>Save New Password</Button>
+        <Button type="submit" className={styles.submitButton}>
+          Save New Password
+        </Button>
       </Form>
     </Formik>
   );

@@ -52,7 +52,7 @@
   width: 100%;
   @include screen-xs-min {
     border-radius: 1.5rem;
-    background-color: rgba($primary-90, 0.85);
+    // background-color: rgba($primary-90, 0.85);
   }
   @include screen-xs-max {
     padding: 2rem 1.625rem;

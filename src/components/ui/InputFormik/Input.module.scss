@@ -53,14 +53,18 @@
 
 .error {
   position: absolute;
-  right: 0.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-  color: red;
-  svg {
-    fill: $error;
-  }
+  // right: 0.5rem;
+  // top: 50%;
+  // transform: translateY(-50%);
+  // z-index: 2;
+  // мои стиля
+  display: block;
+  top: 100%;
+  padding-left: 6px;
+  color: #ef2447;
+  // svg {
+  //   fill: $error;
+  // }
 }
 
 .eye {

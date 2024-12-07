@@ -54,8 +54,9 @@ export const RegisterForm = () => {
           label="Repeat password"
         />
 
-        <Button className={styles.submitButton}>
-          Create My Account to Get Motivated
+        <Button type="submit" className={styles.submitButton}>
+          <span>Create My Account to Get Motivated</span>
+
           <Icon name="arrow-top-right" width={24} height={24} />
         </Button>
       </Form>

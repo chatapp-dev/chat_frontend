@@ -6,8 +6,8 @@ import styles from "./Input.module.scss";
 interface InputFormikProps {
   name: string;
   placeholder?: string; // Поле необязательное
-  type?: string; // Поле необязательное, можно указать значение по умолчанию
-  label?: string; // Поле необязательное
+  type?: string;
+  label?: string;
 }
 
 export const InputFormik: React.FC<InputFormikProps> = ({
@@ -29,9 +29,7 @@ export const InputFormik: React.FC<InputFormikProps> = ({
         id={name}
         name={name}
         placeholder={placeholder}
-        type={
-          type === "password" ? (isPasswordVisible ? "text" : "password") : type
-        }
+        type={isPasswordVisible ? "text" : type}
       />
       {type === "password" && (
         <button

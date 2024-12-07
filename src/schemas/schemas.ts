@@ -1,39 +1,20 @@
 import * as yup from "yup";
+import * as validation from "./validationSchemas";
 
 export const registerSchema = yup.object().shape({
   userName: yup.string().required("Username is required"),
 
-  email: yup
-    .string()
-    .matches(
-      /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/,
-      "Enter a valid Email"
-    )
-    .required("Email is required"),
+  email: validation.emailValidation,
 
-  password: yup
-    .string()
-    .min(7, "Password must be at least 10 characters")
-    .required("Password is required"),
-  confirmpassword: yup
-    .string()
-    .oneOf([yup.ref("password"), undefined], "Passwords must match")
-    .required("Confirm password is required"),
+  password: validation.passwordValidation,
+
+  confirmpassword: validation.confirmPasswordValidation("password"),
 });
 
 export const loginSchema = yup.object().shape({
-  email: yup
-    .string()
-    .matches(
-      /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/,
-      "Enter a valid Email"
-    )
-    .required("Email is required"),
+  email: validation.emailValidation,
 
-  password: yup
-    .string()
-    .min(10, "Password must be at least 10 characters")
-    .required("Password is required"),
+  password: validation.passwordValidation,
 });
 
 export const secureSchema = yup.object().shape({
@@ -44,28 +25,13 @@ export const secureSchema = yup.object().shape({
 });
 
 export const forgotSchema = yup.object().shape({
-  email: yup
-    .string()
-    .matches(
-      /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/,
-      "Enter a valid Email"
-    )
-    .required("Email is required"),
+  email: validation.emailValidation,
 });
 
 export const refrechSchema = yup.object().shape({
-  email: yup
-    .string()
-    .matches(
-      /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/,
-      "Enter a valid Email"
-    ),
-  password: yup
-    .string()
-    .min(10, "Password must be at least 10 characters")
-    .required("Password is required"),
-  confirmpassword: yup
-    .string()
-    .oneOf([yup.ref("password"), undefined], "Passwords must match")
-    .required("Confirm password is required"),
+  email: validation.emailValidation,
+
+  password: validation.passwordValidation,
+
+  confirmpassword: validation.confirmPasswordValidation("password"),
 });

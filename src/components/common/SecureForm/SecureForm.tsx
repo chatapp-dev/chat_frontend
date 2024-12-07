@@ -30,7 +30,7 @@ export const SecureForm = () => {
           label="Enter verification code"
         />
 
-        <Button className={styles.submitButton}>
+        <Button type="submit" className={styles.submitButton}>
           Verify and Continue to Motivation
         </Button>
       </Form>
