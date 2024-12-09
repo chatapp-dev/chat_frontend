@@ -1,9 +1,11 @@
-import {RouterProvider} from 'react-router-dom'
-import {router} from "@/router/router.tsx";
-
+import { QueryProvider } from "@/providers";
+import { router } from "@/router/router.tsx";
+import { RouterProvider } from "react-router-dom";
 
 export const Router = () => {
-    return (
-        <RouterProvider router={router} />
-    )
-}
+  return (
+    <QueryProvider>
+      <RouterProvider router={router} />
+    </QueryProvider>
+  );
+};

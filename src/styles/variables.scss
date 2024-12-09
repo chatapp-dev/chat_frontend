@@ -1,0 +1,99 @@
+$minWidth: 320;
+$maxWidth: 1440;
+$maxWidthContainer: 1200;
+$containerPadding: 20;
+$containerWidth: calc($maxWidthContainer + $containerPadding * 2);
+$rem-base: 16;
+
+$font-roboto: "Roboto", sans-serif;
+$font-palanquin: "Palanquin", sans-serif;
+
+$text-xs: 0.75rem;
+$text-sm: 0.875rem;
+$text-base: 1rem;
+$text-lg: 1.125rem;
+
+$screen-xs: 30rem;
+$screen-sm: 36rem;
+$screen-md: 48rem;
+$screen-lg: 64rem;
+$screen-xl: 75rem;
+//уьножаем на 16
+$black: #000000;
+$white: #ffffff;
+
+$primary-98: rgb(247, 249, 255);
+$primary-95: rgb(231, 242, 255);
+$primary-90: rgb(205, 229, 255);
+$primary-80: rgb(148, 204, 255);
+$primary-70: rgb(116, 177, 230);
+$primary-60: rgb(88, 150, 201);
+$primary-50: rgb(59, 124, 174);
+$primary-40: rgb(25, 99, 147);
+$primary-30: rgb(0, 75, 116);
+$primary-20: rgb(0, 51, 82);
+$primary-10: rgb(0, 29, 50);
+
+$secondary-98: rgb(237, 255, 226);
+$secondary-95: rgb(203, 255, 186);
+$secondary-90: rgb(189, 240, 173);
+$secondary-80: rgb(162, 212, 147);
+$secondary-70: rgb(135, 184, 121);
+$secondary-60: rgb(109, 157, 97);
+$secondary-50: rgb(85, 130, 74);
+$secondary-40: rgb(60, 105, 51);
+$secondary-30: rgb(37, 80, 30);
+$secondary-20: rgb(12, 57, 8);
+$secondary-10: rgb(0, 34, 0);
+
+$tertiary-98: rgb(228, 255, 251);
+$tertiary-95: rgb(195, 252, 244);
+$tertiary-90: rgb(181, 237, 230);
+$tertiary-80: rgb(154, 209, 202);
+$tertiary-70: rgb(127, 181, 175);
+$tertiary-60: rgb(100, 154, 148);
+$tertiary-50: rgb(74, 128, 123);
+$tertiary-40: rgb(48, 103, 98);
+$tertiary-30: rgb(20, 79, 74);
+$tertiary-20: rgb(0, 55, 51);
+$tertiary-10: rgb(0, 32, 29);
+
+$error-98: rgb(255, 248, 247);
+$error-95: rgb(255, 237, 234);
+$error-90: rgb(255, 218, 214);
+$error-80: rgb(255, 180, 171);
+$error-70: rgb(255, 137, 126);
+$error-60: rgb(255, 84, 74);
+$error-50: rgb(229, 40, 40);
+$error-40: rgb(192, 0, 19);
+$error-30: rgb(147, 0, 11);
+$error-20: rgb(105, 0, 5);
+$error-10: rgb(65, 0, 2);
+
+$neutral-98: rgb(252, 248, 248);
+$neutral-95: rgb(244, 240, 239);
+$neutral-90: rgb(229, 226, 225);
+$neutral-80: rgb(201, 198, 197);
+$neutral-70: rgb(173, 170, 170);
+$neutral-60: rgb(146, 144, 144);
+$neutral-50: rgb(120, 119, 118);
+$neutral-40: rgb(95, 94, 94);
+$neutral-30: rgb(72, 70, 70);
+$neutral-20: rgb(49, 48, 48);
+$neutral-10: rgb(28, 27, 27);
+
+$primary: rgb(44, 99, 139);
+$primary-fixed: rgb(205, 229, 255);
+$primary-fixed-dim: rgb(153, 204, 250);
+$primary-container: rgb(205, 229, 255);
+$on-primary-container: rgb(0, 29, 49);
+
+$surface: rgb(252, 250, 236);
+
+$on-surface: rgb(28, 28, 20);
+$on-surface-variant: rgb(63, 73, 72);
+
+$text: rgb(13, 13, 13);
+$error: rgb(186, 26, 26);
+$outline: rgb(117, 119, 123);
+$outline-variant: rgb(190, 201, 199);
