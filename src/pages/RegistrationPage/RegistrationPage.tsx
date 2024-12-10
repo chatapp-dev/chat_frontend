@@ -1,5 +1,5 @@
 import logo from "@/assets/images/logo.png";
-import { Routes } from "@/constants";
+import { AppRoutes } from "@/constants";
 import { Link } from "react-router-dom";
 import { RegisterForm } from "@/components/common/RegisterForm";
 import styles from "../SignInPage/SignInPage.module.scss";
@@ -25,7 +25,7 @@ export const RegistrationPage = () => {
 
         <div className={styles.noAccount}>
           <p>Is Already a Member of Our Motivation Realm?</p>
-          <Link to={Routes.SIGN_IN}>Log in</Link>
+          <Link to={AppRoutes.SIGN_IN}>Log in</Link>
         </div>
         {/* </div> */}
       </div>

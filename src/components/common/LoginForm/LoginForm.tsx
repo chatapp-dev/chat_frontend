@@ -1,5 +1,5 @@
 import { Button, InputFormik } from "@/components/ui";
-import { Routes } from "@/constants";
+import { AppRoutes } from "@/constants";
 import { Link } from "react-router-dom";
 // import { useDispatch } from "react-redux";
 // import { loginThunk } from "../../redux/auth/operationsAuth";
@@ -39,7 +39,7 @@ export const LoginForm = () => {
           type="password"
           label="Password"
         />
-        <Link className={styles.forgotPassword} to={Routes.FORGOT_PASSWORD}>
+        <Link className={styles.forgotPassword} to={AppRoutes.FORGOT_PASSWORD}>
           Forgot your password?
         </Link>
 
