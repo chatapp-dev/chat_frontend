@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { handlePending } from "./auth.status";
-import { login, register } from "./auth.operations";
+import { handleFullfiled, handlePending, handleRejected } from "./auth.status";
+import { current, login, logout, register } from "./auth.operations";
 
 const initialState = {
     user: null,
@@ -17,54 +17,25 @@ export const authSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(register.pending, handlePending)
-            .addCase(
-                register.fulfilled,
-                (state, action: PayloadAction<any>) => {
-                    state.isLoading = false;
-                    state.isAuthenticated = true;
-                    state.user = action.payload.user;
-                    state.token = action.payload.token;
-                }
-            )
-            .addCase(register.rejected, (state, action: PayloadAction<any>) => {
-                state.isLoading = false;
-                state.error = action.payload;
-            })
+            .addCase(register.fulfilled, handleFullfiled)
+            .addCase(register.rejected, handleRejected)
             .addCase(login.pending, handlePending)
-            .addCase(login.fulfilled, (state, action: PayloadAction<any>) => {
+            .addCase(login.fulfilled, handleFullfiled)
+            .addCase(login.rejected, handleRejected)
+            .addCase(current.pending, handlePending)
+            .addCase(current.fulfilled, (state, action: PayloadAction<any>) => {
                 state.isLoading = false;
                 state.isAuthenticated = true;
-                state.user = action.payload.user;
-                state.token = action.payload.token;
+                state.user = action.payload;
+                state.error = null;
             })
-            .addCase(login.rejected, (state, action: PayloadAction<any>) => {
-                state.isLoading = false;
-                state.error = action.payload;
+            .addCase(current.rejected, handleRejected)
+            .addCase(logout.pending, handlePending)
+            .addCase(logout.fulfilled, () => {
+                return initialState;
             })
-            // .addCase(logout.pending, handlePending)
-            // .addCase(logout.fulfilled, () => {
-            //     return initialState;
-            // })
-            // .addCase(logout.rejected, (state, action: PayloadAction<any>) => {
-            //     state.isLoading = false;
-            //     state.error = action.payload;
-            // })
-            // .addCase(getCurrentUser.pending, handlePending)
-            // .addCase(
-            //     getCurrentUser.fulfilled,
-            //     (state, action: PayloadAction<any>) => {
-            //         state.isLoading = false;
-            //         state.isLoggedIn = true;
-            //         state.user = action.payload;
-            //         state.error = null;
-            //     }
-            // )
-            // .addCase(
-            //     getCurrentUser.rejected,
-            //     (state, action: PayloadAction<any>) => {
-            //         state.isLoading = false;
-            //         state.error = action.payload;
-            //     }
-            // );
+            .addCase(logout.rejected, handleRejected);
     },
 });
+
+export const authReducer = authSlice.reducer;

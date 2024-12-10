@@ -1,7 +1,13 @@
 import { ILoginData, IRegisterData } from "@/components/common";
-import { loginRequest, registerRequest } from "@/services/auth/auth.api";
+import {
+    currentRequest,
+    loginRequest,
+    logoutRequest,
+    registerRequest,
+} from "@/services/auth/auth.api";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { isAxiosError } from "axios";
+import { RootState } from "../store";
 
 export const register = createAsyncThunk(
     "auth/register",
@@ -10,8 +16,8 @@ export const register = createAsyncThunk(
             const data = await registerRequest(body);
             return data;
         } catch (error) {
-            if(isAxiosError(error)) {
-                return rejectWithValue(error.response?.data);
+            if (isAxiosError(error)) {
+                return rejectWithValue(error.response?.data.message);
             }
         }
     }
@@ -24,8 +30,52 @@ export const login = createAsyncThunk(
             const data = await loginRequest(body);
             return data;
         } catch (error) {
-            if(isAxiosError(error)) {
-                return rejectWithValue(error.response?.data);
+            if (isAxiosError(error)) {
+                return rejectWithValue(error.response?.data.message);
+            }
+        }
+    }
+);
+
+export const current = createAsyncThunk(
+    "auth/current",
+    async (_, { rejectWithValue, getState }) => {
+        const state = getState() as RootState;
+        const { token } = state.auth;
+
+        if (token === null) {
+            return rejectWithValue("Unable to fetch user");
+        }
+
+        try {
+            const data = await currentRequest(token!);
+            return data;
+        } catch (error) {
+            if (isAxiosError(error)) {
+                return rejectWithValue(error.response?.data.message);
+            }
+        }
+    },
+    {
+        condition: (_, { getState }) => {
+            const { auth } = getState() as RootState;
+
+            if (!auth.token) {
+                return false;
+            }
+        },
+    }
+);
+
+export const logout = createAsyncThunk(
+    "auth/logout",
+    async (_, { rejectWithValue }) => {
+        try {
+            const data = await logoutRequest();
+            return data;
+        } catch (error) {
+            if (isAxiosError(error)) {
+                return rejectWithValue(error.response?.data.message);
             }
         }
     }

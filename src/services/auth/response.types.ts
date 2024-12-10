@@ -5,3 +5,7 @@ export interface IAuthResponse {
     };
     token: string;
 }
+
+export interface ILogoutResponse {
+    message: string;
+}
