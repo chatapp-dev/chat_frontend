@@ -2,7 +2,7 @@ import appleLogo from "@/assets/images/apple-logo.png";
 import googleLogo from "@/assets/images/google-logo.png";
 import logo from "@/assets/images/logo.png";
 import { Button } from "@/components/ui";
-import { Routes } from "@/constants";
+import { AppRoutes } from "@/constants";
 import { Link } from "react-router-dom";
 import { LoginForm } from "@/components/common/LoginForm";
 import styles from "../SignInPage/SignInPage.module.scss";
@@ -40,7 +40,7 @@ export const LoginPage = () => {
         </div>
         <div className={styles.noAccount}>
           <p>Not Member of Our Motivation Realm?</p>
-          <Link to={Routes.SIGN_UP}>Become a member</Link>
+          <Link to={AppRoutes.SIGN_UP}>Become a member</Link>
         </div>
         {/* </div> */}
       </div>

@@ -6,7 +6,7 @@ import { registerSchema } from "../../../schemas/schemas";
 import { Icon } from "../Icon";
 import styles from "../../../pages/SignInPage/SignInPage.module.scss";
 
-interface Values {
+export interface IRegisterData {
   userName: string;
   email: string;
   password: string;
@@ -23,7 +23,7 @@ export const RegisterForm = () => {
         confirmpassword: "",
       }}
       validationSchema={registerSchema}
-      onSubmit={(values: Values) => {
+      onSubmit={(values: IRegisterData) => {
         console.log("register", values);
         // dispatch(loginThunk(values));
       }}

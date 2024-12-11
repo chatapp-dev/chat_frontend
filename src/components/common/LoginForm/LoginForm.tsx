@@ -1,5 +1,5 @@
 import { Button, InputFormik } from "@/components/ui";
-import { Routes } from "@/constants";
+import { AppRoutes } from "@/constants";
 import { Link } from "react-router-dom";
 // import { useDispatch } from "react-redux";
 // import { loginThunk } from "../../redux/auth/operationsAuth";
@@ -8,7 +8,7 @@ import { loginSchema } from "../../../schemas/schemas";
 import { Icon } from "../Icon";
 import styles from "../../../pages/SignInPage/SignInPage.module.scss";
 
-interface Values {
+export interface ILoginData {
   email: string;
   password: string;
 }
@@ -21,7 +21,7 @@ export const LoginForm = () => {
         password: "",
       }}
       validationSchema={loginSchema}
-      onSubmit={(values: Values) => {
+      onSubmit={(values: ILoginData) => {
         console.log("login", values);
         // dispatch(loginThunk(values));
       }}
@@ -39,7 +39,7 @@ export const LoginForm = () => {
           type="password"
           label="Password"
         />
-        <Link className={styles.forgotPassword} to={Routes.FORGOT_PASSWORD}>
+        <Link className={styles.forgotPassword} to={AppRoutes.FORGOT_PASSWORD}>
           Forgot your password?
         </Link>
 

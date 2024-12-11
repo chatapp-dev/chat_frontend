@@ -1,11 +1,15 @@
-import { QueryProvider } from "@/providers";
-import { router } from "@/router/router.tsx";
-import { RouterProvider } from "react-router-dom";
+import App from "@/components/App";
+import { store } from "@/store/store";
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 
 export const Router = () => {
-  return (
-    <QueryProvider>
-      <RouterProvider router={router} />
-    </QueryProvider>
-  );
+    return (
+        <Provider store={store}>
+            <BrowserRouter basename="/chat_frontend">
+                {/* <RouterProvider router={router} /> */}
+                <App />
+            </BrowserRouter>
+        </Provider>
+    );
 };
