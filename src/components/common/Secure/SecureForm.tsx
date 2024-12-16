@@ -6,7 +6,7 @@ import { secureSchema } from "../../../schemas/schemas";
 // import { useForm } from "@/hooks";
 import styles from "../Login/Login.module.scss";
 
-interface ISecureData {
+export interface ISecureData {
   code: string;
 }
 
@@ -31,7 +31,7 @@ const SecureForm = () => {
         />
 
         <Button type="submit" className={styles.submitButton}>
-          Verify and Continue to Motivation
+          <span>Verify and Continue to Motivation</span>
         </Button>
       </Form>
     </Formik>

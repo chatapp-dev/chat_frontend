@@ -46,7 +46,7 @@ const RefreshForma = () => {
         />
 
         <Button type="submit" className={styles.submitButton}>
-          Save New Password
+          <span>Save New Password</span>
         </Button>
       </Form>
     </Formik>
