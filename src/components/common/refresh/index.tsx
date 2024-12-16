@@ -1,2 +1,2 @@
-// eslint-disable-next-line react-refresh/only-export-components
-export * from "./RefreshForma";
+export { default as Refreesh } from "./Refresh";
+export { default as RefreshForma } from "./RefreshForma";

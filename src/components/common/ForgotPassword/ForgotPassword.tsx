@@ -1,14 +1,15 @@
 import logo from "@/assets/images/logo.png";
-import { ForgotPasswordForm } from "@/components/common/ForgotPasswordForm/ForgotPasswordForm";
+import { ForgotPasswordForm } from "@/components/common/ForgotPassword";
 
-import styles from "../SignInPage/SignInPage.module.scss";
-import { RefreshPage } from "../RefreshPage/RefreshPage";
+// import { RefreshPage } from "../RefreshPage/RefreshPage";
 // import { SecurePage } from "../SecurePage";
+import Refresh from "../Refresh/Refresh";
+import styles from "../Login/Login.module.scss";
 
 export const ForgotPassword = () => {
   const isLogin = false;
   return isLogin ? (
-    <RefreshPage />
+    <Refresh />
   ) : (
     <div className={styles.wrapper}>
       <div className={styles.logo}>
@@ -29,3 +30,5 @@ export const ForgotPassword = () => {
     </div>
   );
 };
+
+export default ForgotPassword;

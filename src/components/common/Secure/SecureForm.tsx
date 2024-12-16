@@ -4,20 +4,20 @@ import { Button, InputFormik } from "@/components/ui";
 import { Formik, Form } from "formik";
 import { secureSchema } from "../../../schemas/schemas";
 // import { useForm } from "@/hooks";
-import styles from "../../../pages/SignInPage/SignInPage.module.scss";
+import styles from "../Login/Login.module.scss";
 
-interface Values {
+interface ISecureData {
   code: string;
 }
 
-export const SecureForm = () => {
+const SecureForm = () => {
   return (
     <Formik
       initialValues={{
         code: "",
       }}
       validationSchema={secureSchema}
-      onSubmit={(values: Values) => {
+      onSubmit={(values: ISecureData) => {
         console.log("hello", values);
         // dispatch(loginThunk(values));
       }}
@@ -37,3 +37,5 @@ export const SecureForm = () => {
     </Formik>
   );
 };
+
+export default SecureForm;

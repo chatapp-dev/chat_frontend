@@ -3,21 +3,21 @@ import { Button, InputFormik } from "@/components/ui";
 // import { loginThunk } from "../../redux/auth/operationsAuth";
 import { Formik, Form } from "formik";
 import { forgotSchema } from "../../../schemas/schemas";
-import { Icon } from "../Icon";
-import styles from "../../../pages/SignInPage/SignInPage.module.scss";
+import { Icon } from "../../ui/Icon";
+import styles from "../Login/Login.module.scss";
 
-interface Values {
+export interface IForgotData {
   email: string;
 }
 
-export const ForgotPasswordForm = () => {
+const ForgotPasswordForm = () => {
   return (
     <Formik
       initialValues={{
         email: "",
       }}
       validationSchema={forgotSchema}
-      onSubmit={(values: Values) => {
+      onSubmit={(values: IForgotData) => {
         console.log("forgot", values);
         // dispatch(loginThunk(values));
       }}
@@ -39,3 +39,4 @@ export const ForgotPasswordForm = () => {
     </Formik>
   );
 };
+export default ForgotPasswordForm;

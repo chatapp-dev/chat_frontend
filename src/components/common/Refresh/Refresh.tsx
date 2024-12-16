@@ -1,9 +1,8 @@
 import logo from "@/assets/images/logo.png";
-import { SecureForm } from "@/components/common/SecureForm";
+import { RefreshForma } from "@/components/common/Refresh";
+import styles from "../Login/Login.module.scss";
 
-import styles from "../SignInPage/SignInPage.module.scss";
-
-export const SecurePage = () => {
+const Refresh = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.logo}>
@@ -12,15 +11,16 @@ export const SecurePage = () => {
       <div className={styles.container}>
         <div className={styles.form}>
           <div className={styles.header}>
-            <h1>Secure Your Journey</h1>
+            <h1>Reset. Refresh. Restart!</h1>
             <p>
-              To ensure your experience is safe and protected, please verify
-              your identity. Your motivation deserves the best security
+              Create a new password to keep your motivation secure. Fresh starts
+              are part of every journey – let’s get you moving forward again!
             </p>
           </div>
-          <SecureForm />
+          <RefreshForma />
         </div>
       </div>
     </div>
   );
 };
+export default Refresh;

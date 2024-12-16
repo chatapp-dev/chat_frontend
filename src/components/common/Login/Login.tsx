@@ -4,10 +4,10 @@ import logo from "@/assets/images/logo.png";
 import { Button } from "@/components/ui";
 import { AppRoutes } from "@/constants";
 import { Link } from "react-router-dom";
-import { LoginForm } from "@/components/common/LoginForm";
-import styles from "../SignInPage/SignInPage.module.scss";
+import { LoginForm } from "@/components/common/Login";
+import styles from "./Login.module.scss";
 
-export const LoginPage = () => {
+export const Login = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.logo}>
@@ -47,3 +47,5 @@ export const LoginPage = () => {
     </div>
   );
 };
+
+export default Login;

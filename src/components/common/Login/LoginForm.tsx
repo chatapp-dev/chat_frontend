@@ -1,27 +1,28 @@
-import { Button, InputFormik } from "@/components/ui";
+import { Button, InputFormik, Icon } from "@/components/ui";
+import { AppRoutes } from "@/constants";
+import { Link } from "react-router-dom";
 // import { useDispatch } from "react-redux";
 // import { loginThunk } from "../../redux/auth/operationsAuth";
 import { Formik, Form } from "formik";
-import { refrechSchema } from "../../../schemas/schemas";
-import styles from "../Login/Login.module.scss";
+import { loginSchema } from "../../../schemas/schemas";
 
-export interface IRefreshData {
+import styles from "./Login.module.scss";
+
+export interface ILoginData {
   email: string;
   password: string;
-  confirmpassword: string;
 }
 
-const RefreshForma = () => {
+const LoginForm = () => {
   return (
     <Formik
       initialValues={{
         email: "",
         password: "",
-        confirmpassword: "",
       }}
-      validationSchema={refrechSchema}
-      onSubmit={(values: IRefreshData) => {
-        console.log("refrech", values);
+      validationSchema={loginSchema}
+      onSubmit={(values: ILoginData) => {
+        console.log("login", values);
         // dispatch(loginThunk(values));
       }}
     >
@@ -38,19 +39,18 @@ const RefreshForma = () => {
           type="password"
           label="Password"
         />
-        <InputFormik
-          name="confirmpassword"
-          placeholder="**********"
-          type="password"
-          label="Repeat password"
-        />
+        <Link className={styles.forgotPassword} to={AppRoutes.FORGOT_PASSWORD}>
+          Forgot your password?
+        </Link>
 
         <Button type="submit" className={styles.submitButton}>
-          Save New Password
+          <span>Log In and Stay Motivated</span>
+
+          <Icon name="arrow-top-right" width={24} height={24} />
         </Button>
       </Form>
     </Formik>
   );
 };
 
-export default RefreshForma;
+export default LoginForm;

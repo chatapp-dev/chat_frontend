@@ -1,10 +1,10 @@
 import logo from "@/assets/images/logo.png";
 import { AppRoutes } from "@/constants";
 import { Link } from "react-router-dom";
-import { RegisterForm } from "@/components/common/RegisterForm";
-import styles from "../SignInPage/SignInPage.module.scss";
+import { RegisterForm } from "@/components/common/Register";
+import styles from "../Login/Login.module.scss";
 
-export const RegistrationPage = () => {
+export const Register = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.logo}>
@@ -32,3 +32,5 @@ export const RegistrationPage = () => {
     </div>
   );
 };
+
+export default Register;
