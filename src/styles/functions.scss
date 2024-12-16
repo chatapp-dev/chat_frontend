@@ -1,11 +1,17 @@
-@use './variables.scss' as *;
+@use "sass:meta";
+@use "sass:math";
+@use "./variables.scss" as *;
+//Эта функция применяется в миксинах которые не используются
 
 @function convert-rem-to-unitless($value) {
-	@if type-of($value) == 'number' and unit($value) == 'rem' {
-		@return $value / 1rem * $rem-base;
-	} @else if unitless($value) {
-		@return $value;
-	} @else {
-		@error "Value must be in 'rem' or unitless.";
-	}
+  @if meta.type-of($value) == "number" and math.unit($value) == "rem" {
+    @return calc($value / 1rem) * $rem-base;
+  } @else if math.is-unitless($value) {
+    @return $value;
+  } @else {
+    @error "Value must be in 'rem' or unitless.";
+  }
 }
+
+// @debug convert-rem-to-unitless(20rem);
+// @debug convert-rem-to-unitless(20);
