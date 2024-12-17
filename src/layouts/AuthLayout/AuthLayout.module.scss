@@ -1,39 +1,47 @@
-@use '@/styles/mixins.scss' as *;
+@use "@/styles/mixins.scss" as mx;
 
 .wrapper {
-	background: linear-gradient(
-		134.34deg,
-		rgb(140, 201, 255) 10.302%,
-		rgb(207, 255, 167) 95.209%
-	);
-	height: max-content;
+  background: linear-gradient(108deg, #8cc9ff 2.97%, #cfffa7 100%);
+  height: 100%;
 
-	> div {
-		background: url('../../assets/images/auth.png');
-		width: 100%;
-		height: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		background-size: cover;
-	}
+  > div {
+    @include mx.mq("md") {
+      background: url("../../assets/images/authPlan.svg");
+
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      background-size: cover;
+    }
+    @include mx.mq("xl") {
+      background: url("../../assets/images/auth.png");
+    }
+  }
 }
+// не нащла где используется этот класс
+// .bg {
+//   z-index: 2;
+//   width: 100%;
+//   height: 100%;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   object-fit: cover;
+// }
 
-.bg {
-	z-index: 2;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	object-fit: cover;
-}
-
+// возможно нужно будет content перенести в div
 .content {
-	position: relative;
-	z-index: 3;
+  position: relative;
+  z-index: 3;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  position: absolute;
+  top: 48px;
 }

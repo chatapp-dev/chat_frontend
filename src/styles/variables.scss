@@ -13,11 +13,18 @@ $text-sm: 0.875rem;
 $text-base: 1rem;
 $text-lg: 1.125rem;
 
-$screen-xs: 30rem;
-$screen-sm: 36rem;
-$screen-md: 48rem;
-$screen-lg: 64rem;
-$screen-xl: 75rem;
+$screen-xs: 30rem; //480px
+$screen-sm: 36rem; //576px
+$screen-md: 48rem; //768px
+$screen-lg: 64rem; //1024px
+$screen-xl: 75rem; //1200px
+
+$breakpoints: (
+  "sm": 320px,
+  "md": 768px,
+  "xl": 1440px,
+);
+
 //умножаем на 16
 $black: #000000;
 $white: #ffffff;
@@ -97,3 +104,4 @@ $text: rgb(13, 13, 13);
 $error: rgb(186, 26, 26);
 $outline: rgb(117, 119, 123);
 $outline-variant: rgb(190, 201, 199);
+$title: #0d0d0d;

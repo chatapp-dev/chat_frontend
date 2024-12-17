@@ -1,5 +1,9 @@
 @use "@/styles/variables.scss" as *;
-@use "@/styles/mixins.scss" as *;
+@use "@/styles/mixins.scss" as mx;
+
+.logo {
+  position: absolute;
+}
 
 .wrapper {
   max-width: 37.625rem;
@@ -9,7 +13,7 @@
   flex-direction: column;
   gap: 34px;
   align-items: center;
-  @include screen-xs-max {
+  @include mx.mq("md", max) {
     padding: 1.125rem 0;
     gap: 1.125rem;
   }
@@ -21,27 +25,31 @@
   flex-direction: column;
   align-items: center;
   gap: 29px;
-  @include screen-xs-min {
-    padding: 0 5px;
+  background-color: rgba($primary-90, 0.85);
+  @include mx.mq("md") {
+    border-radius: 25px;
   }
-  @include screen-xs-max {
-    background-color: rgba($primary-90, 0.85);
-  }
+  // @include mx.screen-xs-min {
+  //   padding: 0 5px;
+  // }
+  // @include mx.screen-xs-max {
+  //   background-color: rgba($primary-90, 0.85);
+  // }
 }
 
 .form {
-  padding: 2rem;
+  padding: 16px 32px;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  // gap: 1.5rem;
   align-items: center;
-  @include screen-xs-min {
-    border-radius: 1.5rem;
-    background-color: rgba($primary-90, 0.85);
-  }
-  @include screen-xs-max {
-    padding: 2rem 1.625rem;
-  }
+  // @include mx.screen-xs-min {
+  //   border-radius: 1.5rem;
+  //   background-color: rgba($primary-90, 0.85);
+  // }
+  // @include mx.screen-xs-max {
+  //   padding: 2rem 1.625rem;
+  // }
 }
 
 .formik {
@@ -50,47 +58,57 @@
   flex-direction: column;
   gap: 1.5rem;
   width: 100%;
-  @include screen-xs-min {
+
+  @include mx.screen-xs-min {
     border-radius: 1.5rem;
     // background-color: rgba($primary-90, 0.85);
   }
-  @include screen-xs-max {
-    padding: 2rem 1.625rem;
-  }
+  // @include mx.screen-xs-max {
+  //   padding: 2rem 1.625rem;
+  // }
 }
 
 .header {
-  margin-bottom: 8px;
+  margin-bottom: 32px;
   h1 {
-    color: $text;
+    font-weight: 400;
+    color: $title;
     font-family: $font-roboto;
-    font-size: 2.8125rem;
-    line-height: 115.555556%; /* 52/45 */
-    margin-bottom: 0.25rem;
-    @include screen-md-max {
-      font-size: 2.25rem;
-      line-height: 122.222222%; /* 44/36 */
+
+    font-size: 36px;
+    line-height: 1.22;
+
+    margin-bottom: 4px;
+    // @include mx.screen-md-max {
+    //   font-size: 2.25rem;
+    //   line-height: 122.222222%; /* 44/36 */
+    // }
+    @include mx.mq("md") {
+      font-size: 45px;
+      line-height: 1.15556;
     }
   }
   p {
-    color: $text;
+    color: $title;
     font-family: $font-roboto;
-    font-size: 1rem;
-    line-height: 150%; /* 24/16 */
-    letter-spacing: 0.4px;
-    @include screen-md-max {
-      font-size: $text-xs;
-      line-height: 133.333333%; /* 16/12 */
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.33333;
+    letter-spacing: 0.03em;
+
+    @include mx.mq("md") {
+      font-size: 16px;
+      line-height: 1.5;
     }
   }
 }
-.submitButton {
-  @include screen-xs-max {
-    font-size: $text-lg;
-    padding: 0.75rem 0.75rem;
-    line-height: 133.333333%; /* 24/18 */
-  }
-}
+// .submitButton {
+//   @include mx.screen-xs-max {
+//     font-size: $text-lg;
+//     padding: 0.75rem 0.75rem;
+//     line-height: 133.333333%; /* 24/18 */
+//   }
+// }
 
 .forgotPassword {
   color: $on-surface;
@@ -139,7 +157,7 @@
   width: 100%;
   gap: 1rem;
 
-  @include screen-xs-max {
+  @include mx.screen-xs-max {
     flex-direction: column;
     max-width: 256px;
   }
@@ -166,7 +184,7 @@
   gap: 0.625rem;
   padding: 1.5rem;
 
-  @include screen-xs-min {
+  @include mx.screen-xs-min {
     border-radius: 1.5rem;
     background-color: rgba($primary-90, 0.85);
   }

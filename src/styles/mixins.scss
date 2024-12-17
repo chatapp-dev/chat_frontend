@@ -1,4 +1,6 @@
-@use "./variables.scss" as *;
+@use "sass:map";
+
+@use "./variables.scss" as var;
 @use "./functions.scss" as *;
 //миксины adaptive-font и adaptive-value ни где не применяются
 @mixin adaptive-font($pc, $mob) {
@@ -42,63 +44,87 @@
     );
   }
 }
+//breakpoints
+@mixin mq($bp: sm, $type: min, $is-retina: false) {
+  @if map.has-key(var.$breakpoints, $bp) {
+    $width: map.get(var.$breakpoints, $bp);
 
+    @if $type == max {
+      $width: $width - 0.02px;
+    }
+
+    @media only screen and (#{$type}-width: $width) {
+      @if $is-retina {
+        @media (min-device-pixel-ratio: 2),
+          (min-resolution: 192dpi),
+          (min-resolution: 2dppx) {
+          @content;
+        }
+      } @else {
+        @content;
+      }
+    }
+  } @else {
+    @error "";
+  }
+}
+//дальше убить все миксины
 @mixin screen-xs-min {
-  @media screen and (width >= $screen-xs) {
+  @media screen and (width >= var.$screen-xs) {
     @content;
   }
 }
 
-@mixin screen-sm-min {
-  @media screen and (width >= $screen-sm) {
-    @content;
-  }
-}
+// @mixin screen-sm-min {
+//   @media screen and (width >= $screen-sm) {
+//     @content;
+//   }
+// }
 
-@mixin screen-md-min {
-  @media screen and (width >= $screen-md) {
-    @content;
-  }
-}
+// @mixin screen-md-min {
+//   @media screen and (width >= $screen-md) {
+//     @content;
+//   }
+// }
 
-@mixin screen-lg-min {
-  @media screen and (width >= $screen-lg) {
-    @content;
-  }
-}
+// @mixin screen-lg-min {
+//   @media screen and (width >= $screen-lg) {
+//     @content;
+//   }
+// }
 
-@mixin screen-xl-min {
-  @media screen and (width >= $screen-xl) {
-    @content;
-  }
-}
+// @mixin screen-xl-min {
+//   @media screen and (width >= $screen-xl) {
+//     @content;
+//   }
+// }
 
 @mixin screen-xs-max {
-  @media screen and (width < $screen-xs) {
+  @media screen and (width < var.$screen-xs) {
     @content;
   }
 }
 
-@mixin screen-sm-max {
-  @media screen and (width < $screen-sm) {
-    @content;
-  }
-}
+// @mixin screen-sm-max {
+//   @media screen and (width < $screen-sm) {
+//     @content;
+//   }
+// }
 
 @mixin screen-md-max {
-  @media screen and (width < $screen-md) {
+  @media screen and (width < var.$screen-md) {
     @content;
   }
 }
 
-@mixin screen-lg-max {
-  @media screen and (width < $screen-lg) {
-    @content;
-  }
-}
+// @mixin screen-lg-max {
+//   @media screen and (width < $screen-lg) {
+//     @content;
+//   }
+// }
 
-@mixin screen-xl-max {
-  @media screen and (width < $screen-xl) {
-    @content;
-  }
-}
+// @mixin screen-xl-max {
+//   @media screen and (width < $screen-xl) {
+//     @content;
+//   }
+// }
