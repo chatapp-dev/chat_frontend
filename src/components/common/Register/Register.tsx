@@ -1,4 +1,3 @@
-import logo from "@/assets/images/logo.png";
 import { AppRoutes } from "@/constants";
 import { Link } from "react-router-dom";
 import { RegisterForm } from "@/components/common/Register";
@@ -7,9 +6,6 @@ import styles from "../Login/Login.module.scss";
 export const Register = () => {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.logo}>
-        <img src={logo} alt="Logo" />
-      </div>
       <div className={styles.container}>
         {/* <div className={styles.form}> */}
         <div className={styles.form}>

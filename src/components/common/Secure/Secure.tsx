@@ -1,4 +1,3 @@
-import logo from "@/assets/images/logo.png";
 import { SecureForm } from "@/components/common/Secure";
 
 import styles from "../Login/Login.module.scss";
@@ -6,9 +5,6 @@ import styles from "../Login/Login.module.scss";
 const Secure = () => {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.logo}>
-        <img src={logo} alt="Logo" />
-      </div>
       <div className={styles.container}>
         <div className={styles.form}>
           <div className={styles.header}>

@@ -1,20 +1,15 @@
-import logo from "@/assets/images/logo.png";
 import { ForgotPasswordForm } from "@/components/common/ForgotPassword";
 
-// import { RefreshPage } from "../RefreshPage/RefreshPage";
-// import { SecurePage } from "../SecurePage";
-import Refresh from "../Refresh/Refresh";
+import Secure from "../Secure/Secure";
+// import Refresh from "../Refresh/Refresh";
 import styles from "../Login/Login.module.scss";
 
 export const ForgotPassword = () => {
   const isLogin = false;
   return isLogin ? (
-    <Refresh />
+    <Secure />
   ) : (
     <div className={styles.wrapper}>
-      <div className={styles.logo}>
-        <img src={logo} alt="Logo" />
-      </div>
       <div className={styles.container}>
         <div className={styles.form}>
           <div className={styles.header}>

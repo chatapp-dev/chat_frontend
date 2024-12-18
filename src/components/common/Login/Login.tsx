@@ -1,6 +1,5 @@
 import appleLogo from "@/assets/images/apple-logo.png";
 import googleLogo from "@/assets/images/google-logo.png";
-import logo from "@/assets/images/logo.png";
 import { Button } from "@/components/ui";
 import { AppRoutes } from "@/constants";
 import { Link } from "react-router-dom";
@@ -10,9 +9,6 @@ import styles from "./Login.module.scss";
 export const Login = () => {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.logo}>
-        <img src={logo} alt="Logo" />
-      </div>
       <div className={styles.container}>
         {/* <div className={styles.form}> */}
         <div className={styles.form}>
@@ -27,7 +23,7 @@ export const Login = () => {
           <LoginForm />
         </div>
 
-        <span className={styles.or}>or</span>
+        <div className={styles.or}>or</div>
         <div className={styles.socialAuth}>
           <Button>
             <img src={googleLogo} alt="google logo" />

@@ -1,30 +1,36 @@
 @use "@/styles/variables.scss" as *;
 @use "@/styles/mixins.scss" as mx;
 
-.logo {
-  position: absolute;
-}
-
 .wrapper {
-  max-width: 37.625rem;
-  padding: 3rem 0.625rem;
+  // max-width: 37.625rem;
+  // padding: 3rem 0.625rem;
+  // height: 822px;
+
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 34px;
   align-items: center;
   @include mx.mq("md", max) {
-    padding: 1.125rem 0;
+    // padding: 1.125rem 0;
     gap: 1.125rem;
+  }
+  @include mx.mq("md") {
+    height: 560px;
+    max-width: 582px;
+  }
+  @include mx.mq("xl") {
+    height: 580px;
   }
 }
 
 .container {
+  padding: 16px 32px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 29px;
+  // gap: 29px;
   background-color: rgba($primary-90, 0.85);
   @include mx.mq("md") {
     border-radius: 25px;
@@ -38,7 +44,6 @@
 }
 
 .form {
-  padding: 16px 32px;
   display: flex;
   flex-direction: column;
   // gap: 1.5rem;
@@ -59,14 +64,14 @@
   gap: 1.5rem;
   width: 100%;
 
-  @include mx.screen-xs-min {
-    border-radius: 1.5rem;
-    // background-color: rgba($primary-90, 0.85);
-  }
-  // @include mx.screen-xs-max {
-  //   padding: 2rem 1.625rem;
-  // }
+  // @include mx.screen-xs-min {
+  //   border-radius: 1.5rem;
+  // background-color: rgba($primary-90, 0.85);
 }
+// @include mx.screen-xs-max {
+//   padding: 2rem 1.625rem;
+// }
+// }
 
 .header {
   margin-bottom: 32px;
@@ -129,7 +134,9 @@
   font-size: 0.75rem;
   font-weight: 600;
 
-  margin-right: 10px;
+  // margin-right: 10px;
+  margin-top: 16px;
+  margin-bottom: 16px;
   line-height: 133.333333%; /* 16/12 */
 
   &::after,
@@ -155,9 +162,10 @@
 .socialAuth {
   display: flex;
   width: 100%;
-  gap: 1rem;
+  gap: 20px;
+  margin-bottom: 40px;
 
-  @include mx.screen-xs-max {
+  @include mx.mq("md", max) {
     flex-direction: column;
     max-width: 256px;
   }
@@ -181,13 +189,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.625rem;
-  padding: 1.5rem;
+  gap: 10px;
+  // padding: 1.5rem;
 
-  @include mx.screen-xs-min {
-    border-radius: 1.5rem;
-    background-color: rgba($primary-90, 0.85);
-  }
+  // @include mx.screen-xs-min {
+  //   border-radius: 1.5rem;
+  //   background-color: rgba($primary-90, 0.85);
+  // }
 
   > p,
   a {
@@ -200,6 +208,7 @@
   > a {
     color: $primary;
     transition: all 0.3s ease-in-out;
+    padding-bottom: 16px;
     &:hover {
       color: rgba($primary, 0.85);
     }
