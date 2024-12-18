@@ -2,10 +2,10 @@ import { ForgotPasswordForm } from "@/components/common/ForgotPassword";
 
 // import Secure from "../Secure/Secure";
 import Refresh from "../Refresh/Refresh";
-import styles from "../Login/Login.module.scss";
+import styles from "../Register/Register.module.scss";
 
 export const ForgotPassword = () => {
-  const isLogin = true;
+  const isLogin = false;
   return isLogin ? (
     <Refresh />
   ) : (

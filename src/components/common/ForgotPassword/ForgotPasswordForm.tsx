@@ -4,7 +4,7 @@ import { Button, InputFormik } from "@/components/ui";
 import { Formik, Form } from "formik";
 import { forgotSchema } from "../../../schemas/schemas";
 import { Icon } from "../../ui/Icon";
-import styles from "../Login/Login.module.scss";
+import styles from "../Register/Register.module.scss";
 
 export interface IForgotData {
   email: string;

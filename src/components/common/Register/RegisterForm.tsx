@@ -3,7 +3,7 @@ import { Button, InputFormik, Icon } from "@/components/ui";
 // import { loginThunk } from "../../redux/auth/operationsAuth";
 import { Formik, Form } from "formik";
 import { registerSchema } from "../../../schemas/schemas";
-import styles from "../Login/Login.module.scss";
+import styles from "./Register.module.scss";
 
 export interface IRegisterData {
   userName: string;

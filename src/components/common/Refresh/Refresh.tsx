@@ -1,5 +1,5 @@
 import { RefreshForma } from "@/components/common/Refresh";
-import styles from "../Login/Login.module.scss";
+import styles from "../Register/Register.module.scss";
 
 const Refresh = () => {
   return (

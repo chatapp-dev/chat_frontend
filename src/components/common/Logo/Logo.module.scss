@@ -1,4 +1,10 @@
+@use "@/styles/mixins.scss" as mx;
+
 .logo {
-  position: absolute;
-  top: 18px;
+  padding-bottom: 18px;
+
+  @include mx.mq("md") {
+    top: 48px;
+    position: absolute;
+  }
 }
