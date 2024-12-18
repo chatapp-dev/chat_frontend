@@ -1,10 +1,11 @@
-@use './variables.scss' as *;
-@use './fonts.scss';
-@use './reset.scss';
-@use './mixins.scss';
+@use "./variables.scss" as *;
+@use "./fonts.scss";
+@use "./reset.scss";
+@use "./mixins.scss";
+@use "./placeholders";
 
 html,
 body,
 #root {
-	height: 100%;
+  height: 100%;
 }

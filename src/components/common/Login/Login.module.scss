@@ -1,5 +1,6 @@
-@use "@/styles/variables.scss" as *;
+@use "@/styles/variables.scss" as var;
 @use "@/styles/mixins.scss" as mx;
+@use "@/styles/placeholders";
 
 .wrapper {
   // max-width: 37.625rem;
@@ -31,7 +32,7 @@
   flex-direction: column;
   align-items: center;
   // gap: 29px;
-  background-color: rgba($primary-90, 0.85);
+  background-color: rgba(var.$primary-90, 0.85);
   @include mx.mq("md") {
     border-radius: 25px;
   }
@@ -77,8 +78,8 @@
   margin-bottom: 32px;
   h1 {
     font-weight: 400;
-    color: $title;
-    font-family: $font-roboto;
+    color: var.$title;
+    font-family: var.$font-roboto;
 
     font-size: 36px;
     line-height: 1.22;
@@ -94,8 +95,8 @@
     }
   }
   p {
-    color: $title;
-    font-family: $font-roboto;
+    color: var.$title;
+    font-family: var.$font-roboto;
     font-weight: 400;
     font-size: 12px;
     line-height: 1.33333;
@@ -116,21 +117,21 @@
 // }
 
 .forgotPassword {
-  color: $on-surface;
-  font-family: $font-roboto;
+  color: var.$on-surface;
+  font-family: var.$font-roboto;
   font-size: 0.875rem;
   line-height: 142.857143%; /* 20/14 */
   letter-spacing: 0.25px;
   transition: all 0.3s ease-in-out;
   align-self: flex-start;
   &:hover {
-    color: rgba($on-surface, 0.85);
+    color: rgba(var.$on-surface, 0.85);
   }
 }
 
 .or {
   position: relative;
-  font-family: $font-palanquin;
+  font-family: var.$font-palanquin;
   font-size: 0.75rem;
   font-weight: 600;
 
@@ -144,7 +145,7 @@
     content: "-------------";
     // position: absolute;
     // top: 50%;
-    color: $outline-variant;
+    color: var.$outline-variant;
   }
 
   &::before {
@@ -174,10 +175,10 @@
     width: 100%;
     background: rgb(140, 201, 255), rgb(207, 255, 167);
     border: 1px solid rgb(111, 121, 120);
-    color: $on-surface-variant;
+    color: var.$on-surface-variant;
     display: flex;
     gap: 0.75rem;
-    font-size: $text-sm;
+    font-size: var.$text-sm;
     line-height: 135.714286%; /* 19/14 */
     padding: 10px;
     font-weight: 700;
@@ -201,17 +202,17 @@
   a {
     font-size: 1rem;
     line-height: 150%; /* 24/16 */
-    font-family: $font-palanquin;
+    font-family: var.$font-palanquin;
   }
   > p {
-    color: $on-surface;
+    color: var.$on-surface;
   }
   > a {
-    color: $primary;
+    color: var.$primary;
     transition: all 0.3s ease-in-out;
     padding-bottom: 16px;
     &:hover {
-      color: rgba($primary, 0.85);
+      color: rgba(var.$primary, 0.85);
     }
   }
 }

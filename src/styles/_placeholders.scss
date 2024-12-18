@@ -1,0 +1,17 @@
+@use "./mixins" as mx;
+//убрать это для примера
+%section-frame {
+  padding: 16px;
+  border-radius: 12px;
+
+  @include mx.mq("sm") {
+    padding: 24px;
+  }
+}
+
+%flex-w100 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
