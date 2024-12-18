@@ -1,17 +1,50 @@
 @use "./mixins" as mx;
-//убрать это для примера
-%section-frame {
-  padding: 16px;
-  border-radius: 12px;
+@use "./variables" as var;
 
-  @include mx.mq("sm") {
-    padding: 24px;
+%flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+%title {
+  font-weight: 400;
+  color: var.$title;
+  font-family: var.$font-roboto;
+  font-size: 36px;
+  line-height: 1.22;
+  @include mx.mq("md") {
+    font-size: 45px;
+    line-height: 1.15556;
   }
 }
 
-%flex-w100 {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+%text-paragraph {
+  color: var.$title;
+  font-family: var.$font-roboto;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33333;
+  letter-spacing: 0.03em;
+
+  @include mx.mq("md") {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+%text-question {
+  font-size: 1rem;
+  line-height: 150%; /* 24/16 */
+  font-family: var.$font-palanquin;
+  color: var.$on-surface;
+}
+
+%text-link {
+  font-size: 1rem;
+  line-height: 150%; /* 24/16 */
+  font-family: var.$font-palanquin;
+  color: var.$primary;
+  &:hover {
+    color: rgba(var.$primary, 0.85);
+  }
 }
