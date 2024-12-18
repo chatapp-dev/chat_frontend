@@ -1,31 +1,39 @@
-import { Button, InputFormik } from "@/components/ui";
+import { Button, InputFormik, Icon } from "@/components/ui";
 // import { useDispatch } from "react-redux";
 // import { loginThunk } from "../../redux/auth/operationsAuth";
 import { Formik, Form } from "formik";
-import { refrechSchema } from "../../../schemas/schemas";
-import styles from "../Register/Register.module.scss";
+import { registerSchema } from "../../../schemas/schemas";
+import styles from "./Register.module.scss";
 
-export interface IRefreshData {
+export interface IRegisterData {
+  userName: string;
   email: string;
   password: string;
   confirmpassword: string;
 }
 
-const RefreshForma = () => {
+const RegisterForm = () => {
   return (
     <Formik
       initialValues={{
+        userName: "",
         email: "",
         password: "",
         confirmpassword: "",
       }}
-      validationSchema={refrechSchema}
-      onSubmit={(values: IRefreshData) => {
-        console.log("refrech", values);
+      validationSchema={registerSchema}
+      onSubmit={(values: IRegisterData) => {
+        console.log("register", values);
         // dispatch(loginThunk(values));
       }}
     >
       <Form className={styles.formik}>
+        <InputFormik
+          name="userName"
+          placeholder="Good Guy 1234"
+          type="name"
+          label="Username"
+        />
         <InputFormik
           name="email"
           placeholder="tom_hiddleston@gmail.com"
@@ -46,11 +54,13 @@ const RefreshForma = () => {
         />
 
         <Button type="submit" className={styles.submitButton}>
-          <span>Save New Password</span>
+          <span>Create My Account to Get Motivated</span>
+
+          <Icon name="arrow-top-right" width={24} height={24} />
         </Button>
       </Form>
     </Formik>
   );
 };
 
-export default RefreshForma;
+export default RegisterForm;

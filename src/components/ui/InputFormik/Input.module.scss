@@ -2,9 +2,10 @@
 
 .container {
   padding: 0.25rem 0px 0.25rem 1rem;
+  height: 56px;
   position: relative;
   border-radius: 0.25rem;
-  border: 1px solid $outline;
+  border: 1px solid #6f7978;
   transition: all 0.3s ease-in-out;
   &Invalid {
     border-color: $error;
@@ -19,11 +20,11 @@
   padding: 0.25rem 0rem 0.25rem;
   width: 100%;
 
-  color: rgb(28, 28, 20);
+  color: #1c1c14;
   font-family: $font-roboto;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 150%; /* 24/16 */
-  letter-spacing: 0.5px;
+  letter-spacing: 0.03em;
   background-color: transparent;
 
   border: none;

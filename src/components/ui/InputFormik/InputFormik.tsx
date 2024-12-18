@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Icon } from "@/components/common";
+import { Icon } from "@/components/ui/Icon";
 import { Field, ErrorMessage } from "formik";
 import styles from "./Input.module.scss";
 
