@@ -1,6 +1,5 @@
 import { SecureForm } from "@/components/common/Secure";
-
-import styles from "../Login/Login.module.scss";
+import styles from "../Register/Register.module.scss";
 
 const Secure = () => {
   return (

@@ -1,4 +1,4 @@
-import { RefreshForma } from "@/components/common/Refresh";
+import { RefreshForm } from "@/components/common/Refresh";
 import styles from "../Register/Register.module.scss";
 
 const Refresh = () => {
@@ -13,7 +13,7 @@ const Refresh = () => {
               are part of every journey – let’s get you moving forward again!
             </p>
           </div>
-          <RefreshForma />
+          <RefreshForm />
         </div>
       </div>
     </div>

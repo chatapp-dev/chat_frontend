@@ -1,3 +1,3 @@
 export { default as Refreesh } from "./Refresh";
-export { default as RefreshForma } from "./RefreshForma";
-export type { IRefreshData } from "./RefreshForma";
+export { default as RefreshForm } from "./RefreshForm";
+export type { IRefreshData } from "./RefreshForm";

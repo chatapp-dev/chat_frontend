@@ -1,13 +1,12 @@
 import { ForgotPasswordForm } from "@/components/common/ForgotPassword";
-
-// import Secure from "../Secure/Secure";
-import Refresh from "../Refresh/Refresh";
+import Secure from "../Secure/Secure";
+// import Refresh from "../Refresh/Refresh";
 import styles from "../Register/Register.module.scss";
 
 export const ForgotPassword = () => {
   const isLogin = false;
   return isLogin ? (
-    <Refresh />
+    <Secure />
   ) : (
     <div className={styles.wrapper}>
       <div className={styles.container}>

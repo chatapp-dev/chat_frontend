@@ -11,7 +11,7 @@ export interface IRefreshData {
   confirmpassword: string;
 }
 
-const RefreshForma = () => {
+const RefreshForm = () => {
   return (
     <Formik
       initialValues={{
@@ -53,4 +53,4 @@ const RefreshForma = () => {
   );
 };
 
-export default RefreshForma;
+export default RefreshForm;

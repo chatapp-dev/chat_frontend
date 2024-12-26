@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { LoginForm } from "@/components/common/Login";
 import styles from "./Login.module.scss";
 
-export const Login = () => {
+const Login = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>

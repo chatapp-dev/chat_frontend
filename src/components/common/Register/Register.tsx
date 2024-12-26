@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { RegisterForm } from "@/components/common/Register";
 import styles from "./Register.module.scss";
 
-export const Register = () => {
+const Register = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
