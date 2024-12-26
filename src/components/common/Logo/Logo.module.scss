@@ -4,7 +4,6 @@
   padding-bottom: 18px;
 
   @include mx.mq("md") {
-    top: 48px;
-    position: absolute;
+    padding-bottom: 0;
   }
 }

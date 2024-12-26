@@ -8,6 +8,7 @@
   gap: 34px;
   width: 100%;
   align-items: center;
+  justify-content: center;
 
   @include mx.mq("md", max) {
     gap: 1.125rem;
@@ -15,6 +16,7 @@
   @include mx.mq("md") {
     // height: 560px;
     max-width: 582px;
+    flex: 1;
   }
   @include mx.mq("xl") {
     // height: 580px;
