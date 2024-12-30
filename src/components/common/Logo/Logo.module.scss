@@ -1,0 +1,9 @@
+@use "@/styles/mixins.scss" as mx;
+
+.logo {
+  padding-bottom: 18px;
+
+  @include mx.mq("md") {
+    padding-bottom: 0;
+  }
+}

@@ -1,0 +1,101 @@
+@use "@/styles/variables.scss" as var;
+@use "@/styles/mixins.scss" as mx;
+@use "@/styles/placeholders";
+
+.wrapper {
+  @extend %flex-column;
+
+  gap: 34px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+  @include mx.mq("md", max) {
+    gap: 1.125rem;
+  }
+  @include mx.mq("md") {
+    // height: 560px;
+    max-width: 582px;
+    flex: 1;
+  }
+  @include mx.mq("xl") {
+    // height: 580px;
+  }
+}
+
+.container {
+  @extend %flex-column;
+
+  padding: 16px 32px;
+  width: 100%;
+  align-items: center;
+  background-color: rgba(var.$primary-90, 0.85);
+  @include mx.mq("md") {
+    border-radius: 25px;
+    background-color: transparent;
+  }
+}
+
+.form {
+  @extend %flex-column;
+
+  align-items: center;
+
+  @include mx.mq("md") {
+    background-color: rgba(var.$primary-90, 0.85);
+    border-radius: 25px;
+    padding: 48px;
+    // height: 704px;
+    width: 582px;
+    margin-bottom: 24px;
+  }
+}
+
+.formik {
+  @extend %flex-column;
+
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.header {
+  margin-bottom: 32px;
+  h1 {
+    @extend %title;
+
+    margin-bottom: 4px;
+  }
+  p {
+    @extend %text-paragraph;
+  }
+}
+
+.noAccount {
+  @extend %flex-column;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+  padding-top: 10px;
+
+  @include mx.mq("md") {
+    background-color: rgba(var.$primary-90, 0.85);
+    border-radius: 25px;
+    padding: 24px;
+    width: 582px;
+  }
+
+  > p {
+    @extend %text-question;
+    text-align: center;
+  }
+  > a {
+    @extend %text-link;
+
+    transition: all 0.3s ease-in-out;
+    padding-bottom: 16px;
+
+    @include mx.mq("md") {
+      padding-bottom: 0;
+    }
+  }
+}
