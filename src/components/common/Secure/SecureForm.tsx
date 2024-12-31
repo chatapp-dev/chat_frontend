@@ -2,7 +2,7 @@ import { Button, InputFormik } from "@/components/ui";
 // import { useDispatch } from "react-redux";
 // import { loginThunk } from "../../redux/auth/operationsAuth";
 import { Formik, Form } from "formik";
-import { secureSchema } from "../../../schemas/schemas";
+import { secureSchema } from "@/schemas/schemas";
 // import { useForm } from "@/hooks";
 import styles from "../Login/Login.module.scss";
 
@@ -10,7 +10,7 @@ export interface ISecureData {
   code: string;
 }
 
-const SecureForm = () => {
+export const SecureForm = () => {
   return (
     <Formik
       initialValues={{
@@ -37,5 +37,3 @@ const SecureForm = () => {
     </Formik>
   );
 };
-
-export default SecureForm;

@@ -1,4 +1,4 @@
-import { Secure } from "@/components/common";
+import Secure from "@/components/common/Secure/Secure";
 
 const SecurePage = () => {
   return <Secure />;

@@ -1,16 +1,15 @@
-import { Button, InputFormik } from "@/components/ui";
+import { Button, InputFormik, Icon } from "@/components/ui";
 // import { useDispatch } from "react-redux";
 // import { loginThunk } from "../../redux/auth/operationsAuth";
 import { Formik, Form } from "formik";
-import { forgotSchema } from "../../../schemas/schemas";
-import { Icon } from "../../ui/Icon";
+import { forgotSchema } from "@/schemas/schemas";
 import styles from "../Register/Register.module.scss";
 
 export interface IForgotData {
   email: string;
 }
 
-const ForgotPasswordForm = () => {
+export const ForgotPasswordForm = () => {
   return (
     <Formik
       initialValues={{
@@ -39,4 +38,3 @@ const ForgotPasswordForm = () => {
     </Formik>
   );
 };
-export default ForgotPasswordForm;
