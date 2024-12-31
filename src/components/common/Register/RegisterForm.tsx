@@ -12,7 +12,7 @@ export interface IRegisterData {
   confirmpassword: string;
 }
 
-const RegisterForm = () => {
+export const RegisterForm = () => {
   return (
     <Formik
       initialValues={{
@@ -62,5 +62,3 @@ const RegisterForm = () => {
     </Formik>
   );
 };
-
-export default RegisterForm;

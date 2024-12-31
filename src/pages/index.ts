@@ -1,5 +1,5 @@
-export { default as RegistrationPage } from "@/pages/RegistrationPage";
-export { default as ForgotPasswordPage } from "@/pages/ForgotPasswordPage";
-export { default as RefreshPage } from "@/pages/RefreshPage";
-export { default as SecurePage } from "@/pages/SecurePage";
-export { default as LoginPage } from "@/pages/LoginPage";
+export { default as RegistrationPage } from "./RegistrationPage";
+export { default as ForgotPasswordPage } from "./ForgotPasswordPage";
+export { default as RefreshPage } from "./RefreshPage";
+export { default as SecurePage } from "./SecurePage";
+export { default as LoginPage } from "./LoginPage";

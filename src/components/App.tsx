@@ -1,5 +1,6 @@
 import { AppRoutes } from "@/constants";
-import { AuthLayout } from "@/layouts";
+import AuthLayout from "@/layouts/AuthLayout/AuthLayout";
+
 import { ForgotPasswordPage, LoginPage, RegistrationPage } from "@/pages";
 import { Link, Route, Routes } from "react-router-dom";
 

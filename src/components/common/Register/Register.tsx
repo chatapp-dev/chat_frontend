@@ -1,6 +1,6 @@
 import { AppRoutes } from "@/constants";
 import { Link } from "react-router-dom";
-import { RegisterForm } from "@/components/common/Register";
+import { RegisterForm } from "./RegisterForm";
 import styles from "./Register.module.scss";
 
 const Register = () => {

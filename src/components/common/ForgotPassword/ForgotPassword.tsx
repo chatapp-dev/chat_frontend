@@ -1,9 +1,9 @@
-import { ForgotPasswordForm } from "@/components/common/ForgotPassword";
+import { ForgotPasswordForm } from "./ForgotPasswordForm";
 import Secure from "../Secure/Secure";
 // import Refresh from "../Refresh/Refresh";
 import styles from "../Register/Register.module.scss";
 
-export const ForgotPassword = () => {
+const ForgotPassword = () => {
   const isLogin = false;
   return isLogin ? (
     <Secure />

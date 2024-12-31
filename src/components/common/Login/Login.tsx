@@ -3,14 +3,13 @@ import googleLogo from "@/assets/images/google-logo.png";
 import { Button } from "@/components/ui";
 import { AppRoutes } from "@/constants";
 import { Link } from "react-router-dom";
-import { LoginForm } from "@/components/common/Login";
 import styles from "./Login.module.scss";
+import { LoginForm } from "./LoginForm";
 
 const Login = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
-        {/* <div className={styles.form}> */}
         <div className={styles.form}>
           <div className={styles.header}>
             <h1>Welcome Back to Your Motivational Space</h1>
@@ -38,7 +37,6 @@ const Login = () => {
           <p>Not Member of Our Motivation Realm?</p>
           <Link to={AppRoutes.SIGN_UP}>Become a member</Link>
         </div>
-        {/* </div> */}
       </div>
     </div>
   );
