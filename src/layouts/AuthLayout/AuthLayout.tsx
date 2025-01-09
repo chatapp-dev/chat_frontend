@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { Logo } from "@/components/common";
+import Logo from "@/components/common/Logo/Logo";
 import styles from "./AuthLayout.module.scss";
 
 const AuthLayout = () => {

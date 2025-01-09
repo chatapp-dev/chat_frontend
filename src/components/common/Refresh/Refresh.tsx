@@ -1,4 +1,4 @@
-import { RefreshForm } from "@/components/common/Refresh";
+import { RefreshForm } from "./RefreshForm";
 import styles from "../Register/Register.module.scss";
 
 const Refresh = () => {

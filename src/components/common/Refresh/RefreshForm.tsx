@@ -2,7 +2,7 @@ import { Button, InputFormik } from "@/components/ui";
 // import { useDispatch } from "react-redux";
 // import { loginThunk } from "../../redux/auth/operationsAuth";
 import { Formik, Form } from "formik";
-import { refrechSchema } from "../../../schemas/schemas";
+import { refrechSchema } from "@/schemas/schemas";
 import styles from "../Register/Register.module.scss";
 
 export interface IRefreshData {
@@ -11,7 +11,7 @@ export interface IRefreshData {
   confirmpassword: string;
 }
 
-const RefreshForm = () => {
+export const RefreshForm = () => {
   return (
     <Formik
       initialValues={{
@@ -52,5 +52,3 @@ const RefreshForm = () => {
     </Formik>
   );
 };
-
-export default RefreshForm;

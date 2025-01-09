@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 // import { useDispatch } from "react-redux";
 // import { loginThunk } from "../../redux/auth/operationsAuth";
 import { Formik, Form } from "formik";
-import { loginSchema } from "../../../schemas/schemas";
+import { loginSchema } from "@/schemas/schemas";
 
 import styles from "./Login.module.scss";
 
@@ -13,7 +13,7 @@ export interface ILoginData {
   password: string;
 }
 
-const LoginForm = () => {
+export const LoginForm = () => {
   return (
     <Formik
       initialValues={{
@@ -52,5 +52,3 @@ const LoginForm = () => {
     </Formik>
   );
 };
-
-export default LoginForm;
