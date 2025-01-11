@@ -1,8 +1,8 @@
 import { Button, InputFormik, Icon } from "@/components/ui";
 import { AppRoutes } from "@/constants";
 import { Link } from "react-router-dom";
-// import { useDispatch } from "react-redux";
-// import { loginThunk } from "../../redux/auth/operationsAuth";
+import { useAppDispatch } from "@/hooks/useRedux";
+import { login } from "@/store/auth/auth.operations";
 import { Formik, Form } from "formik";
 import { loginSchema } from "@/schemas/schemas";
 
@@ -14,6 +14,8 @@ export interface ILoginData {
 }
 
 export const LoginForm = () => {
+  const dispatch = useAppDispatch();
+
   return (
     <Formik
       initialValues={{
@@ -23,7 +25,7 @@ export const LoginForm = () => {
       validationSchema={loginSchema}
       onSubmit={(values: ILoginData) => {
         console.log("login", values);
-        // dispatch(loginThunk(values));
+        dispatch(login(values));
       }}
     >
       <Form className={styles.formik}>

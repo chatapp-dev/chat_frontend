@@ -1,6 +1,6 @@
 import { Button, InputFormik } from "@/components/ui";
-// import { useDispatch } from "react-redux";
-// import { loginThunk } from "../../redux/auth/operationsAuth";
+// import { useAppDispatch } from "@/hooks/useRedux";
+// import { login } from "@/store/auth/auth.operations";
 import { Formik, Form } from "formik";
 import { refrechSchema } from "@/schemas/schemas";
 import styles from "../Register/Register.module.scss";
@@ -12,6 +12,7 @@ export interface IRefreshData {
 }
 
 export const RefreshForm = () => {
+  // const dispatch = useAppDispatch();
   return (
     <Formik
       initialValues={{
@@ -22,7 +23,7 @@ export const RefreshForm = () => {
       validationSchema={refrechSchema}
       onSubmit={(values: IRefreshData) => {
         console.log("refrech", values);
-        // dispatch(loginThunk(values));
+        // dispatch(login(values));
       }}
     >
       <Form className={styles.formik}>
