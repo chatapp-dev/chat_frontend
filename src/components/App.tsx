@@ -1,7 +1,13 @@
 import { AppRoutes } from "@/constants";
 import AuthLayout from "@/layouts/AuthLayout/AuthLayout";
 
-import { ForgotPasswordPage, LoginPage, RegistrationPage } from "@/pages";
+import {
+  ForgotPasswordPage,
+  LoginPage,
+  RegistrationPage,
+  ChatPage,
+} from "@/pages";
+
 import { Link, Route, Routes } from "react-router-dom";
 
 const App = () => {
@@ -9,8 +15,9 @@ const App = () => {
     <Routes>
       <Route
         path={AppRoutes.ROOT}
-        element={<Link to={AppRoutes.SIGN_UP}>Welcome to Chat Mate</Link>}
+        element={<Link to={AppRoutes.SIGN_IN}>Welcome to Chat Mate</Link>}
       />
+      <Route path={AppRoutes.CHAT_MAKE} element={<ChatPage />} />
       <Route element={<AuthLayout />}>
         <Route path={AppRoutes.SIGN_UP} element={<RegistrationPage />} />
         <Route path={AppRoutes.SIGN_IN} element={<LoginPage />} />

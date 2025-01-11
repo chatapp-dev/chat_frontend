@@ -3,8 +3,8 @@ import googleLogo from "@/assets/images/google-logo.png";
 import { Button } from "@/components/ui";
 import { AppRoutes } from "@/constants";
 import { Link } from "react-router-dom";
-import styles from "./Login.module.scss";
 import { LoginForm } from "./LoginForm";
+import styles from "./Login.module.scss";
 
 const Login = () => {
   return (

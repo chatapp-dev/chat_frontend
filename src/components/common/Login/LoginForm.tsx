@@ -1,6 +1,6 @@
 import { Button, InputFormik, Icon } from "@/components/ui";
 import { AppRoutes } from "@/constants";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import { useDispatch } from "react-redux";
 // import { loginThunk } from "../../redux/auth/operationsAuth";
 import { Formik, Form } from "formik";
@@ -14,6 +14,8 @@ export interface ILoginData {
 }
 
 export const LoginForm = () => {
+  const navigate = useNavigate();
+
   return (
     <Formik
       initialValues={{
@@ -24,6 +26,7 @@ export const LoginForm = () => {
       onSubmit={(values: ILoginData) => {
         console.log("login", values);
         // dispatch(loginThunk(values));
+        navigate(AppRoutes.CHAT_MAKE);
       }}
     >
       <Form className={styles.formik}>
