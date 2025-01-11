@@ -1,6 +1,6 @@
 import { Button, InputFormik, Icon } from "@/components/ui";
-// import { useDispatch } from "react-redux";
-// import { loginThunk } from "../../redux/auth/operationsAuth";
+import { useAppDispatch } from "@/hooks/useRedux";
+import { register } from "@/store/auth/auth.operations";
 import { Formik, Form } from "formik";
 import { registerSchema } from "../../../schemas/schemas";
 import styles from "./Register.module.scss";
@@ -13,6 +13,7 @@ export interface IRegisterData {
 }
 
 export const RegisterForm = () => {
+  const dispatch = useAppDispatch();
   return (
     <Formik
       initialValues={{
@@ -24,7 +25,7 @@ export const RegisterForm = () => {
       validationSchema={registerSchema}
       onSubmit={(values: IRegisterData) => {
         console.log("register", values);
-        // dispatch(loginThunk(values));
+        dispatch(register(values));
       }}
     >
       <Form className={styles.formik}>

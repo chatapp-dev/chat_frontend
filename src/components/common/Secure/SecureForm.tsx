@@ -1,9 +1,9 @@
 import { Button, InputFormik } from "@/components/ui";
-// import { useDispatch } from "react-redux";
-// import { loginThunk } from "../../redux/auth/operationsAuth";
+// import { useAppDispatch } from "@/hooks/useRedux";
+// import { register } from "@/store/auth/auth.operations";
 import { Formik, Form } from "formik";
 import { secureSchema } from "@/schemas/schemas";
-// import { useForm } from "@/hooks";
+
 import styles from "../Login/Login.module.scss";
 
 export interface ISecureData {
@@ -11,6 +11,7 @@ export interface ISecureData {
 }
 
 export const SecureForm = () => {
+  // const dispatch = useAppDispatch();
   return (
     <Formik
       initialValues={{
@@ -19,7 +20,7 @@ export const SecureForm = () => {
       validationSchema={secureSchema}
       onSubmit={(values: ISecureData) => {
         console.log("hello", values);
-        // dispatch(loginThunk(values));
+        // dispatch(register(values));
       }}
     >
       <Form className={styles.formik}>

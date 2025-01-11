@@ -1,6 +1,6 @@
 import { Button, InputFormik, Icon } from "@/components/ui";
-// import { useDispatch } from "react-redux";
-// import { loginThunk } from "../../redux/auth/operationsAuth";
+// import { useAppDispatch } from "@/hooks/useRedux";
+// import { login } from "@/store/auth/auth.operations";
 import { Formik, Form } from "formik";
 import { forgotSchema } from "@/schemas/schemas";
 import styles from "../Register/Register.module.scss";
@@ -10,6 +10,7 @@ export interface IForgotData {
 }
 
 export const ForgotPasswordForm = () => {
+  // const dispatch = useAppDispatch();
   return (
     <Formik
       initialValues={{
